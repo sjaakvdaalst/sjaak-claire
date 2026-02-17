@@ -257,7 +257,7 @@ function setupScrollAnimations() {
 function setupIntermission() {
     const intermission = document.querySelector('.intermission');
     const bg           = document.querySelector('.intermission-bg');
-    const quote        = document.getElementById('intermission-quote');
+    const quote        = d('intermission-quote');
     if (!intermission || !quote || !bg) return;
 
     // --- Build letter spans, set initial (hidden, offset) state ---
@@ -675,16 +675,14 @@ document.querySelectorAll('.faq-question').forEach(question => {
 // RSVP FORM SUBMISSION
 // ==========================================
 
-const rsvpForm = document.getElementById('rsvpForm');
-if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(rsvpForm));
-        console.log('RSVP Data:', data);
-        alert(translations[currentLang]['rsvp-alert'] || 'Thank you for your RSVP! We look forward to celebrating with you.');
-        rsvpForm.reset();
-    });
-}
+const rsvpForm = document.getElementById("rsvpForm");
+
+rsvpForm.addEventListener("submit", function () {
+    setTimeout(() => {
+        alert("Thank you for your RSVP!");
+    }, 500);
+});
+
 
 // ==========================================
 // FORM VALIDATION ENHANCEMENT
@@ -715,3 +713,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
