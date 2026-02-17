@@ -1,0 +1,1227 @@
+/* ==========================================
+   GOOGLE FONTS
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+
+/* ==========================================
+   FONT DECLARATIONS
+   ========================================== */
+
+@font-face {
+    font-family: 'Andasia';
+    src: url('/fonts/Andasia.woff2') format('woff2'),
+         url('/fonts/Andasia.woff') format('woff'),
+         url('/fonts/Andasia.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('/fonts/Cinzel-Regular.woff2') format('woff2'),
+         url('/fonts/Cinzel-Regular.woff') format('woff'),
+         url('/fonts/Cinzel-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('/fonts/CormorantGaramond-Regular.woff2') format('woff2'),
+         url('/fonts/CormorantGaramond-Regular.woff') format('woff'),
+         url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('/fonts/CormorantGaramond-Italic.woff2') format('woff2'),
+         url('/fonts/CormorantGaramond-Italic.woff') format('woff'),
+         url('/fonts/CormorantGaramond-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('/fonts/CormorantGaramond-Bold.woff2') format('woff2'),
+         url('/fonts/CormorantGaramond-Bold.woff') format('woff'),
+         url('/fonts/CormorantGaramond-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('/fonts/CormorantGaramond-BoldItalic.woff2') format('woff2'),
+         url('/fonts/CormorantGaramond-BoldItalic.woff') format('woff'),
+         url('/fonts/CormorantGaramond-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ==========================================
+   CSS VARIABLES
+   ========================================== */
+
+:root {
+    --dark-gray-green: #1a1e1c;
+    --pastel-gray-yellow: #e4db93;
+    --dark-red: #6d0f1a;
+    --cream-white: #f5f5f5;
+    --dark-gray-azure: #131618;
+
+    --font-andasia: 'Andasia', cursive;
+    --font-cinzel: 'Cinzel', serif;
+    --font-cormorant: 'Cormorant Garamond', serif;
+    --font-playfair: 'Playfair Display', serif;
+}
+
+/* ==========================================
+   BASE STYLES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-cormorant);
+    color: var(--cream-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+    background-color: var(--dark-gray-azure);
+}
+
+section {
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--dark-gray-azure);
+}
+
+/* ==========================================
+   SCROLL ANIMATION SYSTEM
+   Elements start hidden; JS adds/removes
+   .sa-visible every time they enter/leave
+   viewport — fully bidirectional.
+   ========================================== */
+
+/* Fade-up: default state */
+.sa-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sa-up.sa-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade from left: for gallery scroll & registry image */
+.sa-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sa-left.sa-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger helpers for Our Story paragraphs */
+.sa-delay-1 { transition-delay: 0.10s; }
+.sa-delay-2 { transition-delay: 0.25s; }
+.sa-delay-3 { transition-delay: 0.45s; }
+.sa-delay-4 { transition-delay: 0.65s; }
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-gray-green);
+    padding: 1rem 2rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: var(--pastel-gray-yellow);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--dark-gray-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s ease;
+    z-index: 999;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--pastel-gray-yellow);
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-close:hover {
+    opacity: 0.7;
+    transform: rotate(90deg);
+}
+
+.nav-link {
+    font-family: var(--font-cinzel);
+    font-size: 1.4rem;
+    color: var(--pastel-gray-yellow);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--dark-gray-azure);
+    /* Hero is always fully visible — no SA classes */
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/snow-h-3.JPG');
+    background-size: cover;
+    background-position: center;
+    /* 1. Extended to 3.5 s, runs once only */
+    animation: heroZoomOut 3.5s ease-out forwards;
+    opacity: 0.65;
+}
+
+@keyframes heroZoomOut {
+    from { transform: scale(1.15); }
+    to   { transform: scale(1); }
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    left: 12%;
+    top: 32%;
+    transform: translateY(-50%);
+}
+
+.hero-name {
+    font-family: var(--font-cinzel);
+    font-size: 36px;
+    color: var(--cream-white);
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.hero-name .letter {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateX(-8px);
+    transition:
+        opacity 1.4s ease,
+        filter 1.4s ease,
+        transform 1.4s ease;
+}
+
+.hero-ampersand {
+    font-family: var(--font-andasia);
+    font-size: 38px;
+    color: var(--pastel-gray-yellow);
+    align-self: flex-start;
+    margin-left: 110px;
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateX(-8px);
+    transition:
+        opacity 1.4s ease,
+        filter 1.4s ease,
+        transform 1.4s ease;
+}
+
+.hero-ampersand.active {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0px);
+}
+
+/* ==========================================
+   WELCOME SECTION
+   ========================================== */
+
+/* 2. Desktop: fit content height, not forced full-screen */
+.welcome {
+    background-color: var(--dark-red);
+    background-image: url('img/redpattern-1.PNG');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    min-height: auto;
+}
+
+.welcome-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.welcome-heading {
+    font-family: var(--font-andasia);
+    font-size: 48px;
+    color: var(--cream-white);
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.welcome-message {
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    color: var(--cream-white);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.cross-symbol {
+    font-size: 36px;
+    color: var(--pastel-gray-yellow);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.cross-symbol::before {
+    content: '\2722';
+}
+
+.welcome-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-image {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.05s linear;
+}
+
+/* ==========================================
+   OUR STORY SECTION
+   ========================================== */
+
+.our-story {
+    position: relative;
+    background: var(--dark-gray-azure);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.story-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.story-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    text-align: center;
+}
+
+.story-heading {
+    font-family: var(--font-cormorant);
+    font-size: 34px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--cream-white);
+    margin-bottom: 2rem;
+}
+
+.story-text {
+    font-family: var(--font-cormorant);
+    font-size: 22px;
+    color: var(--cream-white);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.story-content .cross-symbol {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 36px;
+    color: var(--pastel-gray-yellow);
+}
+
+.story-content .cross-symbol::before {
+    content: '\2722';
+}
+
+/* ==========================================
+   INTERMISSION SECTION
+   ========================================== */
+
+.intermission {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--dark-gray-azure);
+}
+
+/*
+ * Background is an inner div (not ::before) so JS can
+ * set transition:none on leave without triggering a zoom-in.
+ */
+.intermission-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--dark-gray-azure);
+    background-image: url('img/snow-h-1.JPG');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transform: scale(1.06);   /* slight zoom-in as default state */
+    /* transition is set/removed dynamically by JS */
+}
+
+/*
+ * 3. Quote sits at 70% from top:
+ *    margin-top: 70vh pushes container top to 70% of viewport,
+ *    then transform: translateY(-50%) centers it on that line.
+ */
+.quote-container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 2rem;
+    margin-top: 25vh;
+    transform: translateY(-50%);
+}
+
+.quote {
+    font-family: var(--font-playfair);
+    font-size: 50px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--pastel-gray-yellow);
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+}
+
+/* 3. Letters: no blur — only opacity + translateX (60px offset applied in JS) */
+.quote .letter {
+    display: inline-block;
+    opacity: 0;
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+/* 3. Decorative gold divider below quote */
+.quote-divider {
+    display: block;
+    width: 100px;
+    height: 1px;
+    background: var(--pastel-gray-yellow);
+    margin: 1.6rem auto 0;
+    opacity: 0;
+    transition: opacity 0.8s ease 0.4s;
+}
+
+.quote-divider.sa-visible {
+    opacity: 0.7;
+}
+
+/* ==========================================
+   MOMENTS SECTION
+   ========================================== */
+
+.moments {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    background-color: var(--dark-red);
+    background-image: url('img/redpattern-1.PNG');
+    background-size: cover;
+    background-position: center;
+}
+
+.moments-content {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    width: 100%;
+}
+
+.moments-heading {
+    font-family: var(--font-cormorant);
+    font-size: 34px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--cream-white);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Horizontal Scroll Gallery */
+.gallery-container {
+    max-height: 50vh;
+    padding: 2rem 0;
+    overflow: visible;
+}
+
+/* Gallery scroll — native scrollbar fully hidden; custom JS scrollbar used instead */
+.gallery-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 1rem 2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.gallery-scroll::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Mobile WebKit */
+}
+
+.gallery-item {
+    position: relative;
+    flex-shrink: 0;
+    width: 400px;
+    height: 40vh;
+    max-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 4. Overlay: dark gray azure, same transparency (~82%) */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(19, 22, 24, 0.82);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay,
+.gallery-item.active .gallery-overlay {
+    opacity: 1;
+}
+
+/* 4. Caption: cream white */
+.gallery-caption {
+    font-family: var(--font-cormorant);
+    font-size: 20px;
+    color: var(--cream-white);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+/* 4. Date: pastel gray yellow + Cormorant Garamond italic */
+.gallery-date {
+    font-family: var(--font-cormorant);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--pastel-gray-yellow);
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .gallery-container { max-height: 60vh; }
+    .gallery-item { width: 300px; height: 35vh; }
+}
+
+/* Custom scrollbar — always visible on all platforms including mobile */
+.gallery-scrollbar-track {
+    width: calc(100% - 4rem);
+    margin: 0.75rem 2rem 0;
+    height: 6px;
+    background: rgba(245, 245, 245, 0.12);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--pastel-gray-yellow);
+    border-radius: 4px;
+    min-width: 40px;
+    transition: width 0.1s ease;
+}
+
+/* ==========================================
+   EVENT SECTIONS (Nuptial Mass & Reception)
+   ========================================== */
+
+.event {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.nuptial-mass {
+    background-color: var(--dark-gray-azure);
+    background-image: url('img/stmary-h-1.JPG');
+    background-size: cover;
+    background-position: center;
+}
+
+.reception {
+    background-color: var(--dark-gray-azure);
+    background-image: url('img/beach-h-1.JPG');
+    background-size: cover;
+    background-position: center;
+}
+
+.event-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.event-info {
+    background: rgba(19, 22, 24, 0.5);
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.event-heading {
+    font-family: var(--font-cormorant);
+    font-size: 34px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--pastel-gray-yellow);
+    margin-bottom: 1.5rem;
+}
+
+.event-datetime {
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    color: var(--cream-white);
+    margin-bottom: 1rem;
+}
+
+.event-venue {
+    font-family: var(--font-cormorant);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cream-white);
+    margin-bottom: 1rem;
+}
+
+.event-address {
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    color: var(--cream-white);
+    margin-bottom: 0.5rem;
+}
+
+.event-note {
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    font-style: italic;
+    color: var(--cream-white);
+    margin-top: 1.5rem;
+}
+
+.menu-link {
+    color: var(--cream-white);
+    text-decoration: underline;
+}
+
+.menu-link:hover { opacity: 0.7; }
+
+.event-icon {
+    display: block;
+    margin: 2rem auto 0;
+    max-width: 100px;
+    height: auto;
+}
+
+.event-map {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.event-map iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .event-map iframe {
+        height: 450px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-map iframe {
+        height: 100vw;
+        max-width: 100vw;
+    }
+}
+
+/* ==========================================
+   FAQ SECTION
+   5. Pattern strip at BOTTOM; 30s; 10vh; spacing above
+   ========================================== */
+
+.faq {
+    background: var(--dark-red);
+    /* 5. Bottom padding accommodates the pattern strip height + gap */
+    padding: 5rem 2rem 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    position: relative;
+}
+
+/* 5. Pattern strip anchored to bottom */
+.faq-pattern-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;          /* 5. Reduced from 12vh */
+    max-height: 100px;
+    min-height: 50px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.faq-pattern-content {
+    display: flex;
+    height: 100%;
+    animation: slidePattern 30s linear infinite; /* 5. Slowed to 30s */
+}
+
+.faq-pattern-content img {
+    height: 100%;
+    width: auto;
+    flex-shrink: 0;
+}
+
+@keyframes slidePattern {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-2000px); }
+}
+
+.faq-heading {
+    font-family: var(--font-cormorant);
+    font-size: 34px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--pastel-gray-yellow);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.faq-icon {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 2.5rem;
+}
+
+.faq-container {
+    max-width: 800px;
+    width: 100%;
+    /* 5. Gap between last FAQ item and the pattern strip below */
+    margin-bottom: 2.5rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(228, 219, 147, 0.3);
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--cream-white);
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    font-style: italic;
+    text-align: left;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover { color: var(--pastel-gray-yellow); }
+
+.faq-toggle {
+    font-size: 32px;
+    color: var(--pastel-gray-yellow);
+    font-style: normal;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    font-family: var(--font-cormorant);
+    font-size: 22px;
+    color: var(--cream-white);
+    padding-bottom: 1.5rem;
+}
+
+/* ==========================================
+   REGISTRY SECTION
+   ========================================== */
+
+.registry {
+    background: var(--dark-gray-azure);
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+}
+
+.registry-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.registry-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.registry-heading {
+    font-family: var(--font-cormorant);
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--cream-white);
+    margin-bottom: 1.5rem;
+}
+
+.registry-message {
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    color: var(--cream-white);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.registry-link {
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    color: var(--pastel-gray-yellow);
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.registry-link:hover { opacity: 0.7; }
+
+/* ==========================================
+   RSVP SECTION
+   ========================================== */
+
+.rsvp {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: var(--dark-gray-azure);
+    background-image: url('img/painting-h-1.JPEG');
+    background-size: cover;
+    background-position: center;
+}
+
+.rsvp-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.rsvp-form-wrapper {
+    background: rgba(19, 22, 24, 0.5);
+    padding: 3rem;
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.rsvp-heading {
+    font-family: var(--font-cormorant);
+    font-size: 28px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--pastel-gray-yellow);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-cormorant);
+    font-size: 18px;
+    color: var(--cream-white);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-family: var(--font-cormorant);
+    font-size: 16px;
+    background: rgba(245, 245, 245, 0.9);
+    border: 1px solid rgba(228, 219, 147, 0.3);
+    border-radius: 4px;
+    color: #333;
+}
+
+.form-group textarea { resize: vertical; }
+
+.rsvp-submit {
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-cormorant);
+    font-size: 20px;
+    font-weight: 600;
+    background: var(--dark-red);
+    color: var(--cream-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rsvp-submit:hover {
+    background: #8a1320;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(109, 15, 26, 0.4);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+    background: var(--dark-red);
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer p {
+    font-family: var(--font-cormorant);
+    font-size: 16px;
+    color: var(--cream-white);
+}
+
+/* ==========================================
+   LANGUAGE SWITCHER
+   ========================================== */
+
+.lang-switcher {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(228, 219, 147, 0.2);
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--pastel-gray-yellow);
+    font-family: var(--font-cinzel);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    padding: 0.35rem 0.65rem;
+    cursor: pointer;
+    opacity: 0.45;
+    transition: opacity 0.25s ease, border-color 0.25s ease;
+    border-radius: 2px;
+}
+
+.lang-btn:hover {
+    opacity: 0.8;
+}
+
+.lang-btn.lang-active {
+    opacity: 1;
+    border-color: rgba(228, 219, 147, 0.45);
+}
+
+.lang-flag {
+    font-size: 1rem;
+    margin-right: 0.2rem;
+    line-height: 1;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .welcome-container,
+    .registry-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .event-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .welcome-logo { order: -1; }
+    .logo-image { max-width: 250px; }
+}
+
+@media (max-width: 768px) {
+    .hero-content { left: 5%; }
+    .hero-name { font-size: 28px; }
+    .hero-ampersand { font-size: 30px; }
+
+    /* 2. Welcome restores full height on mobile */
+    .welcome { min-height: 100vh; }
+
+    .welcome-heading { font-size: 38px; }
+    .welcome-message { font-size: 20px; }
+
+    .story-heading,
+    .moments-heading,
+    .event-heading,
+    .faq-heading,
+    .registry-heading,
+    .rsvp-heading { font-size: 28px; }
+
+    .story-text { font-size: 19px; }
+    .quote { font-size: 36px; }
+
+    .faq-pattern-strip {
+        height: 8vh;
+        min-height: 40px;
+        max-height: 80px;
+    }
+
+    .event-info { padding: 2rem; }
+    .event-datetime, .event-address { font-size: 20px; }
+    .event-venue { font-size: 24px; }
+    .event-note { font-size: 20px; }
+    .faq-question { font-size: 20px; }
+    .faq-answer p { font-size: 19px; }
+    .registry-heading { font-size: 26px; }
+    .registry-message, .registry-link { font-size: 20px; }
+    .rsvp-form-wrapper { padding: 2rem; }
+
+    section {
+        min-height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    /* Hero always visible full screen */
+    .hero {
+        min-height: 100vh !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header { padding: 0.75rem 1rem; }
+    .nav-menu { width: 100%; right: -100%; }
+    .nav-close { font-size: 2.5rem; }
+    .hero-name { font-size: 24px; }
+    .hero-ampersand { font-size: 26px; }
+    .welcome-heading { font-size: 32px; }
+    .welcome-message { font-size: 18px; }
+    .faq-icon { max-width: 120px; }
+    .quote { font-size: 28px; }
+
+    .faq-pattern-strip {
+        height: 6vh;
+        min-height: 30px;
+        max-height: 60px;
+    }
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claire & Sjaak - Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <div class="nav-menu">
+            <button class="nav-close" aria-label="Close menu">&times;</button>
+            <a href="#our-story" class="nav-link" data-i18n="nav-story">Our Story</a>
+            <a href="#nuptial-mass" class="nav-link" data-i18n="nav-mass">Nuptial Mass</a>
+            <a href="#registry" class="nav-link" data-i18n="nav-registry">Registry</a>
+            <a href="#rsvp" class="nav-link" data-i18n="nav-rsvp">RSVP</a>
+            <div class="lang-switcher">
+                <button class="lang-btn lang-active" data-lang="en"><span class="lang-flag">🇺🇸</span>EN</button>
+                <button class="lang-btn" data-lang="nl"><span class="lang-flag">🇳🇱</span>NL</button>
+                <button class="lang-btn" data-lang="de"><span class="lang-flag">🇩🇪</span>DE</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Landing Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-name" id="name1">Claire Schrader</h1>
+            <div class="hero-ampersand" id="ampersand">&</div>
+            <h1 class="hero-name" id="name2">Sjaak van der Aalst</h1>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="welcome">
+        <div class="welcome-container">
+            <div class="welcome-text">
+                <h2 class="welcome-heading" data-i18n="welcome-heading">Welcome!</h2>
+                <p class="welcome-message" data-i18n="welcome-p1">
+                    Claire and Sjaak joyfully invite you to share in the
+                    celebration of their union in the Sacrament of Holy Matrimony.
+                </p>
+                <p class="welcome-message" data-i18n="welcome-p2">
+                    Below, you will find all details about the ceremony,
+                    reception, and more. We're grateful for your presence
+                    as we embark on this great lifelong adventure together.
+                </p>
+                <div class="cross-symbol"></div>
+            </div>
+            <div class="welcome-logo">
+                <img src="img/logo-gold.PNG" alt="Wedding Logo" class="logo-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story" id="our-story">
+        <video class="story-video" autoplay loop muted playsinline>
+            <source src="img/mp4-waterfall-1.MP4" type="video/mp4">
+        </video>
+        <div class="story-content">
+            <h2 class="story-heading" data-i18n="story-heading">A Peek Into Our Story</h2>
+            <p class="story-text" data-i18n="story-p1">
+                Our journey began in Germany in 2021 when Claire studied abroad at Sjaak's high school in Eschweiler. We were classmates, seatmates, and soon — inseparable friends.
+            </p>
+            <p class="story-text" data-i18n="story-p2">
+                What started as shared laughter in religion class grew into a friendship rooted in faith, discovery, and wonder. We spent weekends hiking, going to Mass together, and sharing long conversations over coffee.
+            </p>
+            <p class="story-text" data-i18n="story-p3">
+                Through time, letters, and thousands of miles, our story has unfolded beautifully — guided by God's providence and deepened through the love of family, adventure, and prayer.
+            </p>
+            <div class="cross-symbol"></div>
+        </div>
+    </section>
+
+    <!-- Intermission Section -->
+    <section class="intermission" id="intermission">
+        <!-- Inner div used instead of ::before so JS can control transition directly -->
+        <div class="intermission-bg"></div>
+        <div class="quote-container">
+            <blockquote class="quote" id="intermission-quote">"Ubi amor, ibi oculus."</blockquote>
+            <!-- .quote-divider is injected by JS after the blockquote -->
+        </div>
+    </section>
+
+    <!-- Moments Section -->
+    <section class="moments" id="moments">
+        <div class="moments-content">
+            <h2 class="moments-heading" data-i18n="moments-heading">Moments Through the Years</h2>
+
+            <div class="gallery-container">
+                <div class="gallery-scroll">
+                    <div class="gallery-item">
+                        <img src="img/cologne-h-1.JPG" alt="Our first date in Cologne">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-1-caption">Our first date in Cologne.</div>
+                            <div class="gallery-date">May 2022</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-4.JPG" alt="Sjaak's first time in the US">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-2-caption">Sjaak's first time ever in the US.</div>
+                            <div class="gallery-date">June 2023</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-1.JPG" alt="Celebrating the 4th of July">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-3-caption">Celebrating the 4th of July.</div>
+                            <div class="gallery-date">July 2023</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-5.JPG" alt="Our Abiprom">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-4-caption">Our "Abiprom", celebrating Sjaak's Abitur and Claire's high school graduation.</div>
+                            <div class="gallery-date">July 2023</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/cologne-h-2.JPG" alt="Our families meeting">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-5-caption">Our families meeting up for the first time.</div>
+                            <div class="gallery-date">December 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-3.JPG" alt="Playing detective">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-6-caption">007.</div>
+                            <div class="gallery-date">March 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-2.JPG" alt="Visiting Seattle">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-7-caption">Visiting Seattle around Christmas time.</div>
+                            <div class="gallery-date">December 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/proposal-h-1.JPG" alt="The proposal">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-8-caption">Sjaak proposes to Claire and hands her his hand-carved wooden clogs.</div>
+                            <div class="gallery-date">June 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuptial Mass Section -->
+    <section class="event nuptial-mass" id="nuptial-mass">
+        <div class="event-container">
+            <div class="event-info">
+                <h2 class="event-heading" data-i18n="mass-heading">Nuptial Mass</h2>
+                <p class="event-datetime">July 25, 2026 | 10 am</p>
+                <p class="event-venue">St. Mary Catholic Church</p>
+                <p class="event-address">575 E College St</p>
+                <p class="event-address">Mount Angel, OR 97362</p>
+                <p class="event-address">USA</p>
+                <p class="event-note" data-i18n="mass-note">Please arrive 15 minutes early. There's a parking lot next to the church.</p>
+                <img src="img/icon-h-1.PNG" alt="Church icon" class="event-icon">
+            </div>
+            <div class="event-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2817.910862028934!2d-122.79659582329116!3d45.06731927107031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54bfe1fc5c2c3623%3A0xbde1a3404b5a5469!2sSt%20Mary%20Catholic%20Church!5e0!3m2!1sen!2sde!4v1771184239395!5m2!1sen!2sde"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reception Section -->
+    <section class="event reception" id="reception">
+        <div class="event-container">
+            <div class="event-info">
+                <h2 class="event-heading" data-i18n="reception-heading">Reception</h2>
+                <p class="event-datetime">July 26, 2026 | 1 pm</p>
+                <p class="event-venue">Sorella</p>
+                <p class="event-address">526 NW Coast St, Apt C</p>
+                <p class="event-address">Newport, OR 97365</p>
+                <p class="event-address">USA</p>
+                <p class="event-note"><a href="#" class="menu-link" data-i18n="reception-menu-link">Link to menu.</a></p>
+                <img src="img/icon-h-2.PNG" alt="Dancing icon" class="event-icon">
+            </div>
+            <div class="event-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d726760.4638920872!2d-125.214035953125!3d44.639796000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54c1d7cc55fb10c3%3A0x44049238c1607926!2sSorella!5e0!3m2!1sen!2sde!4v1771184293088!5m2!1sen!2sde"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section — pattern strip now at BOTTOM -->
+    <section class="faq" id="faq">
+        <h2 class="faq-heading" data-i18n="faq-heading">Commonly Asked Questions</h2>
+        <img src="img/icon-h-3.PNG" alt="Decorative icon" class="faq-icon">
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n="faq-q1">Is there a dress code?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq-a1">For the Church, please dress modestly (e.g., covered shoulders).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n="faq-q2">Are children welcome?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq-a2">Yes! Make sure to mention it in the RSVP if applicable.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n="faq-q3">Where should we stay?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq-a3">As there are not many options in the Mt Angel/Silverton area, Salem has some options.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 5. Pattern strip anchored to bottom of FAQ section -->
+        <div class="faq-pattern-strip">
+            <div class="faq-pattern-content">
+                <img src="img/redpattern-3.PNG" alt="">
+                <img src="img/redpattern-3.PNG" alt="">
+                <img src="img/redpattern-3.PNG" alt="">
+                <img src="img/redpattern-3.PNG" alt="">
+                <img src="img/redpattern-3.PNG" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Registry Section -->
+    <section class="registry" id="registry">
+        <div class="registry-container">
+            <div class="registry-image">
+                <img src="img/lights-h-1.JPG" alt="Lights photo">
+            </div>
+            <div class="registry-text">
+                <h2 class="registry-heading" data-i18n="registry-heading">Your presence is truly the best gift we could ask for.</h2>
+                <p class="registry-message" data-i18n="registry-message">
+                    But if you feel called to give a little something, we've put together a small registry.<br>
+                    Click the link below to reach the gift registry.
+                </p>
+                <a href="#" class="registry-link" data-i18n="registry-link">Visit our gift registry</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp" id="rsvp">
+        <div class="rsvp-container">
+            <div class="rsvp-form-wrapper">
+                <h2 class="rsvp-heading" data-i18n="rsvp-heading">Please RSVP by June 1st, 2026</h2>
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="form-group">
+                        <label for="fullName" data-i18n="rsvp-label-name">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="rsvp-label-email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attending" data-i18n="rsvp-label-attending">Will you be attending?</label>
+                        <select id="attending" name="attending" required>
+                            <option value="" data-i18n="rsvp-opt-select">Please select</option>
+                            <option value="yes" data-i18n="rsvp-opt-yes">Yes</option>
+                            <option value="no" data-i18n="rsvp-opt-no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests" data-i18n="rsvp-label-guests">Number of guests</label>
+                        <input type="number" id="guests" name="guests" min="1" max="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="rsvp-label-message">Message for the couple</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="rsvp-submit" data-i18n="rsvp-submit">Send RSVP</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-i18n="footer">&copy; 2026 Claire &amp; Sjaak. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
