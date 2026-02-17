@@ -10,9 +10,9 @@
 
 @font-face {
     font-family: 'Andasia';
-    src: url('/fonts/Andasia.woff2') format('woff2'),
-         url('/fonts/Andasia.woff') format('woff'),
-         url('/fonts/Andasia.ttf') format('truetype');
+    src: url('fonts/Andasia.woff2') format('woff2'),
+         url('fonts/Andasia.woff') format('woff'),
+         url('fonts/Andasia.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -20,9 +20,9 @@
 
 @font-face {
     font-family: 'Cinzel';
-    src: url('/fonts/Cinzel-Regular.woff2') format('woff2'),
-         url('/fonts/Cinzel-Regular.woff') format('woff'),
-         url('/fonts/Cinzel-Regular.ttf') format('truetype');
+    src: url('fonts/Cinzel-Regular.woff2') format('woff2'),
+         url('fonts/Cinzel-Regular.woff') format('woff'),
+         url('fonts/Cinzel-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -30,9 +30,9 @@
 
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('/fonts/CormorantGaramond-Regular.woff2') format('woff2'),
-         url('/fonts/CormorantGaramond-Regular.woff') format('woff'),
-         url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+    src: url('fonts/CormorantGaramond-Regular.woff2') format('woff2'),
+         url('fonts/CormorantGaramond-Regular.woff') format('woff'),
+         url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -40,9 +40,9 @@
 
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('/fonts/CormorantGaramond-Italic.woff2') format('woff2'),
-         url('/fonts/CormorantGaramond-Italic.woff') format('woff'),
-         url('/fonts/CormorantGaramond-Italic.ttf') format('truetype');
+    src: url('fonts/CormorantGaramond-Italic.woff2') format('woff2'),
+         url('fonts/CormorantGaramond-Italic.woff') format('woff'),
+         url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -50,9 +50,9 @@
 
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('/fonts/CormorantGaramond-Bold.woff2') format('woff2'),
-         url('/fonts/CormorantGaramond-Bold.woff') format('woff'),
-         url('/fonts/CormorantGaramond-Bold.ttf') format('truetype');
+    src: url('fonts/CormorantGaramond-Bold.woff2') format('woff2'),
+         url('fonts/CormorantGaramond-Bold.woff') format('woff'),
+         url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -60,9 +60,9 @@
 
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('/fonts/CormorantGaramond-BoldItalic.woff2') format('woff2'),
-         url('/fonts/CormorantGaramond-BoldItalic.woff') format('woff'),
-         url('/fonts/CormorantGaramond-BoldItalic.ttf') format('truetype');
+    src: url('fonts/CormorantGaramond-BoldItalic.woff2') format('woff2'),
+         url('fonts/CormorantGaramond-BoldItalic.woff') format('woff'),
+         url('fonts/CormorantGaramond-BoldItalic.ttf') format('truetype');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -270,7 +270,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/snow-h-3.JPG');
+    background-image: url('img/snow-h-3.jpg');
     background-size: cover;
     background-position: center;
     /* 1. Extended to 3.5 s, runs once only */
@@ -342,7 +342,7 @@ section {
 /* 2. Desktop: fit content height, not forced full-screen */
 .welcome {
     background-color: var(--dark-red);
-    background-image: url('img/redpattern-1.PNG');
+    background-image: url('img/redpattern-1.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -492,7 +492,7 @@ section {
     position: absolute;
     inset: 0;
     background-color: var(--dark-gray-azure);
-    background-image: url('img/snow-h-1.JPG');
+    background-image: url('img/snow-h-1.jpg');
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -564,7 +564,7 @@ section {
     padding: 4rem 2rem;
     overflow: hidden;
     background-color: var(--dark-red);
-    background-image: url('img/redpattern-1.PNG');
+    background-image: url('img/redpattern-1.png');
     background-size: cover;
     background-position: center;
 }
@@ -710,14 +710,14 @@ section {
 
 .nuptial-mass {
     background-color: var(--dark-gray-azure);
-    background-image: url('img/stmary-h-1.JPG');
+    background-image: url('img/stmary-h-1.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .reception {
     background-color: var(--dark-gray-azure);
-    background-image: url('img/beach-h-1.JPG');
+    background-image: url('img/beach-h-1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1006,7 +1006,7 @@ section {
     justify-content: center;
     padding: 4rem 2rem;
     background-color: var(--dark-gray-azure);
-    background-image: url('img/painting-h-1.JPEG');
+    background-image: url('img/painting-h-1.jpeg');
     background-size: cover;
     background-position: center;
 }
