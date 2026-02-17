@@ -671,18 +671,6 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-// ==========================================
-// RSVP FORM SUBMISSION
-// ==========================================
-
-const rsvpForm = document.getElementById("rsvpForm");
-
-rsvpForm.addEventListener("submit", function () {
-    setTimeout(() => {
-        alert("Thank you for your RSVP!");
-    }, 500);
-});
-
 
 // ==========================================
 // FORM VALIDATION ENHANCEMENT
@@ -713,4 +701,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
