@@ -423,9 +423,9 @@ const translations = {
 
         'faq-heading':          'Commonly Asked Questions',
         'faq-q1':               'Is there a dress code?',
-        'faq-a1':               'For the Church, please dress modestly (e.g., covered shoulders).',
-        'faq-q2':               'Are children welcome?',
-        'faq-a2':               'Yes! Make sure to mention it in the RSVP if applicable.',
+        'faq-a1':               'In general, formal attire is appreciated. For the Church, please dress modestly (e.g., covered shoulders).',
+        'faq-q2':               'What is parking like?',
+        'faq-a2':               'At St. Mary, there is a parking lot next to the church. At Sorella, there is street parking available.',
         'faq-q3':               'Where should we stay?',
         'faq-a3':               'As there are not many options in the Mt Angel/Silverton area, Salem has some reasonable places to stay.',
 
@@ -474,13 +474,13 @@ const translations = {
         'gallery-8-caption':    'Sjaak vraagt Claire ten huwelijk en overhandigt haar zijn handgesneden houten klompen.',
 
         'mass-heading':         'Huwelijksmis',
-        'mass-note':            'Gelieve 15 minuten vroeg te komen. Er is een parkeerplaats naast de kerk.',
+        'mass-note':            'Gelieve 15 minuten van tevoren aanwezig te zijn, uw mobiele telefoons uit te zetten en (alstublieft!) geen foto\'s te maken.',
 
         'reception-heading':    'Receptie',
         'reception-menu-link':  'Link naar het menu.',
 
         'faq-heading':          'Veelgestelde Vragen',
-        'faq-q1':               'Is er een kledingvoorschrift?',
+        'faq-q1':               'Is er een dresscode?',
         'faq-a1':               'Voor de kerk wordt u verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
         'faq-q2':               'Hoe zit het met parkeren?',
         'faq-a2':               'Bij St. Mary is er een parkeerplaats naast de kerk. Bij Sorella kun je langs de weg parkeren.',
@@ -488,8 +488,8 @@ const translations = {
         'faq-a3':               'Er zijn niet veel opties in het Mt Angel/Silverton-gebied, maar Salem heeft enkele redelijke mogelijkheden.',
 
         'registry-heading':     'Uw aanwezigheid is werkelijk het mooiste cadeau dat wij ons kunnen wensen.',
-        'registry-message':     'Maar als u toch iets wilt geven, hebben wij een kleine verlanglijst samengesteld.\nKlik op onderstaande link om de verlanglijst te bezoeken.',
-        'registry-link':        'Bezoek onze verlanglijst',
+        'registry-message':     'Maar als u toch iets wilt geven, hebben wij een kleine cadeaulijst samengesteld.\nKlik op onderstaande link om de cadeaulijst te bezoeken.',
+        'registry-link':        'Bezoek onze cadeaulijst',
 
         'rsvp-heading':         'Meld u aan vóór 1 juni 2026',
         'rsvp-label-name':      'Volledige naam',
@@ -517,8 +517,8 @@ const translations = {
         'welcome-p2':           'Nachfolgend finden Sie alle Details zur Zeremonie, zum Empfang und mehr. Wir sind dankbar für Ihre Anwesenheit, wenn wir gemeinsam dieses große lebenslange Abenteuer beginnen.',
 
         'story-heading':        'Ein Blick auf unsere Geschichte',
-        'story-p1':             'Claire und ich, Sjaak, lernten uns 2021 kennen, als sie ein Auslandssemester an meiner Schule in Eschweiler verbrachte. Wir wurden Klassenkameraden und saßen nebeneinander und wurden schnell enge Freunde.',
-        'story-p2':             'Was mit Scherzen im Unterricht begann, entwickelte sich zu einer echten Freundschaft. Wir verbrachten Wochenenden mit Wandern, gingen gemeinsam zur Messe und unterhielten uns stundenlang bei einer Tasse Kaffee.',
+        'story-p1':             'Claire und ich, Sjaak, lernten uns 2021 kennen, als sie ein Jahr an meiner Schule in Eschweiler verbrachte. Wir wurden Klassenkameraden und saßen nebeneinander und wurden schnell enge Freunde.',
+        'story-p2':             'Was mit Scherzen im Unterricht begann, entwickelte sich zu einer echten Freundschaft. Wir verbrachten Wochenenden mit Wandern, gingen gemeinsam zur Messe und unterhielten uns stundenlang bei ein paar Tassen Kaffee.',
         'story-p3':             'Über die Jahre hielten wir durch Briefe, Anrufe und Besuche über Tausende von Kilometern hinweg Kontakt. Im Juni letzten Jahres machte Sjaak Claire in der Abtei Mount Angel mit einem Paar Holzschuhen einen Heiratsantrag. Wir sind dankbar für das, was unsere Beziehung uns gebracht hat, und freuen uns auf die Zukunft.',
 
         'moments-heading':      'Momente durch die Jahre',
@@ -722,6 +722,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
