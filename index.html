@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Splash / Loading Screen -->
+    <div class="splash-screen" id="splashScreen" aria-hidden="true">
+        <div class="splash-bg"></div>
+        <img src="img/logo-gold.png" alt="Wedding Logo" class="splash-logo" id="splashLogo">
+    </div>
+
     <!-- Header Navigation -->
     <header class="header">
         <nav class="nav">
@@ -115,9 +121,25 @@
                     </div>
 
                     <div class="gallery-item">
+                        <img src="img/us-h-7.jpg" alt="Riding San Francisco's cable cars">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-3-caption">Riding San Francisco's historical cable cars.</div>
+                            <div class="gallery-date">June 2023</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-8.jpg" alt="Enjoying the beach in southern Oregon">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-4-caption">Enjoying the beach in southern Oregon.</div>
+                            <div class="gallery-date">July 2023</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
                         <img src="img/us-h-1.jpg" alt="Celebrating the 4th of July">
                         <div class="gallery-overlay">
-                            <div class="gallery-caption" data-i18n="gallery-3-caption">Celebrating the 4th of July.</div>
+                            <div class="gallery-caption" data-i18n="gallery-5-caption">Celebrating the 4th of July.</div>
                             <div class="gallery-date">July 2023</div>
                         </div>
                     </div>
@@ -125,7 +147,7 @@
                     <div class="gallery-item">
                         <img src="img/us-h-5.jpg" alt="Our Abiprom">
                         <div class="gallery-overlay">
-                            <div class="gallery-caption" data-i18n="gallery-4-caption">Our "Abiprom", celebrating Sjaak's Abitur and Claire's high school graduation.</div>
+                            <div class="gallery-caption" data-i18n="gallery-6-caption">Our "Abiprom", celebrating Sjaak's Abitur and Claire's high school graduation.</div>
                             <div class="gallery-date">July 2023</div>
                         </div>
                     </div>
@@ -133,32 +155,72 @@
                     <div class="gallery-item">
                         <img src="img/cologne-h-2.jpg" alt="Our families meeting">
                         <div class="gallery-overlay">
-                            <div class="gallery-caption" data-i18n="gallery-5-caption">Our families meeting up for the first time.</div>
-                            <div class="gallery-date">December 2024</div>
+                            <div class="gallery-caption" data-i18n="gallery-7-caption">Our families meeting up for the first time.</div>
+                            <div class="gallery-date">December 2023</div>
                         </div>
                     </div>
 
                     <div class="gallery-item">
                         <img src="img/us-h-3.jpg" alt="Playing detective">
                         <div class="gallery-overlay">
-                            <div class="gallery-caption" data-i18n="gallery-6-caption">007.</div>
+                            <div class="gallery-caption" data-i18n="gallery-8-caption">Playing detective.</div>
                             <div class="gallery-date">March 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/eersel-h-1.jpg" alt="Streekmuseum in Eersel">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-9-caption">Getting a private tour at the Streekmuseum in Eersel by Sjaak's grandfather.</div>
+                            <div class="gallery-date">August 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/poland-h-1.jpg" alt="Visiting Krakow">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-10-caption">Visiting Krakow with Sjaak's father, Wil.</div>
+                            <div class="gallery-date">August 2024</div>
                         </div>
                     </div>
 
                     <div class="gallery-item">
                         <img src="img/us-h-2.jpg" alt="Visiting Seattle">
                         <div class="gallery-overlay">
-                            <div class="gallery-caption" data-i18n="gallery-7-caption">Visiting Seattle around Christmas time.</div>
+                            <div class="gallery-caption" data-i18n="gallery-11-caption">Visiting Seattle around Christmas time.</div>
                             <div class="gallery-date">December 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-9.jpg" alt="Reviewing coffee in Seattle">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-12-caption">Reviewing coffee has been a routine during our relationship. This was in Seattle.</div>
+                            <div class="gallery-date">December 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/us-h-10.jpg" alt="Hiking at Silver Falls">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-13-caption">Hiking at Silver Falls.</div>
+                            <div class="gallery-date">January 2025</div>
                         </div>
                     </div>
 
                     <div class="gallery-item">
                         <img src="img/proposal-h-1.jpg" alt="The proposal">
                         <div class="gallery-overlay">
-                            <div class="gallery-caption" data-i18n="gallery-8-caption">Sjaak proposes to Claire and hands her his hand-carved wooden clogs.</div>
+                            <div class="gallery-caption" data-i18n="gallery-14-caption">Sjaak proposes to Claire and hands her his hand-carved wooden clogs.</div>
                             <div class="gallery-date">June 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item gallery-item--portrait">
+                        <img src="img/snow-v-3.jpg" alt="Engagement photoshoot">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption" data-i18n="gallery-15-caption">Engagement photoshoot.</div>
+                            <div class="gallery-date">January 2026</div>
                         </div>
                     </div>
                 </div>
@@ -325,6 +387,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
