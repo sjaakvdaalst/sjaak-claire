@@ -48,14 +48,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// LOADING STATE — body fades in on load
+// SPLASH SCREEN — shows for ~3s, then fades
+// Hero name animations fire after splash exits
 // ==========================================
 
-document.body.style.opacity = '0';
-window.addEventListener('load', () => {
-    document.body.style.transition = 'opacity 0.5s ease';
-    document.body.style.opacity    = '1';
-});
+(function() {
+    const splash   = document.getElementById('splashScreen');
+    const DURATION = 3000; // ms the splash stays fully visible
+    const FADE     = 800;  // ms of fade-out (matches CSS transition)
+
+    // Keep body invisible until splash starts fading
+    document.body.style.opacity = '0';
+
+    window.addEventListener('load', () => {
+        // Reveal the body (splash is on top anyway)
+        document.body.style.transition = 'opacity 0.3s ease';
+        document.body.style.opacity    = '1';
+
+        setTimeout(() => {
+            // Begin fade-out of splash
+            splash.classList.add('splash-hidden');
+
+            // After fade completes, remove from DOM flow and fire hero anims
+            setTimeout(() => {
+                splash.classList.add('splash-gone');
+                startHeroAnimations();
+            }, FADE);
+        }, DURATION);
+    });
+})();
+
 
 // ==========================================
 // PRELOAD CRITICAL IMAGES
@@ -67,7 +89,7 @@ window.addEventListener('load', () => {
 });
 
 // ==========================================
-// HERO — clarify animation on load (once)
+// HERO — clarify animation (called after splash exits)
 // ==========================================
 
 function clarifyText(element, startDelay = 0) {
@@ -97,15 +119,15 @@ function clarifyText(element, startDelay = 0) {
     });
 }
 
-window.addEventListener('load', () => {
+function startHeroAnimations() {
     const name1     = document.getElementById('name1');
     const ampersand = document.getElementById('ampersand');
     const name2     = document.getElementById('name2');
 
-    if (name1)     clarifyText(name1, 500);
-    if (ampersand) setTimeout(() => ampersand.classList.add('active'), 1500);
-    if (name2)     clarifyText(name2, 2000);
-});
+    if (name1)     clarifyText(name1, 200);
+    if (ampersand) setTimeout(() => ampersand.classList.add('active'), 1200);
+    if (name2)     clarifyText(name2, 1700);
+}
 
 // ==========================================
 // LOGO ROTATION ON SCROLL
@@ -408,12 +430,19 @@ const translations = {
         'moments-heading':      'Moments Through the Years',
         'gallery-1-caption':    'Our first date in Cologne.',
         'gallery-2-caption':    'Sjaak\'s first time ever in the US.',
-        'gallery-3-caption':    'Celebrating the 4th of July.',
-        'gallery-4-caption':    'Our "Abiprom", celebrating Sjaak\'s Abitur and Claire\'s high school graduation.',
-        'gallery-5-caption':    'Our families meeting up for the first time.',
-        'gallery-6-caption':    '007.',
-        'gallery-7-caption':    'Visiting Seattle around Christmas time.',
-        'gallery-8-caption':    'Sjaak proposes to Claire and hands her his hand-carved wooden clogs.',
+        'gallery-3-caption':    'Riding San Francisco\'s historical cable cars.',
+        'gallery-4-caption':    'Enjoying the beach in southern Oregon.',
+        'gallery-5-caption':    'Celebrating the 4th of July.',
+        'gallery-6-caption':    'Our "Abiprom", celebrating Sjaak\'s Abitur and Claire\'s high school graduation.',
+        'gallery-7-caption':    'Our families meeting up for the first time.',
+        'gallery-8-caption':    'Playing detective.',
+        'gallery-9-caption':    'Getting a private tour at the Streekmuseum in Eersel by Sjaak\'s grandfather.',
+        'gallery-10-caption':   'Visiting Krakow with Sjaak\'s father, Wil.',
+        'gallery-11-caption':   'Visiting Seattle around Christmas time.',
+        'gallery-12-caption':   'Reviewing coffee has been a routine during our relationship. This was in Seattle.',
+        'gallery-13-caption':   'Hiking at Silver Falls.',
+        'gallery-14-caption':   'Sjaak proposes to Claire and hands her his hand-carved wooden clogs.',
+        'gallery-15-caption':   'Engagement photoshoot.',
 
         'mass-heading':         'Nuptial Mass',
         'mass-note':            'Please arrive 15 minutes early, silence your cellphones, and (please!) no photos.',
@@ -466,12 +495,19 @@ const translations = {
         'moments-heading':      'Momenten door de Jaren',
         'gallery-1-caption':    'Ons eerste date in Keulen.',
         'gallery-2-caption':    'Sjaaks allereerste bezoek aan de VS.',
-        'gallery-3-caption':    'De viering van 4 juli.',
-        'gallery-4-caption':    'Ons "Abiprom", ter viering van Sjaaks Abitur en Claire\'s eindexamen.',
-        'gallery-5-caption':    'Onze families ontmoeten elkaar voor het eerst.',
-        'gallery-6-caption':    '007.',
-        'gallery-7-caption':    'Seattle bezoeken rond Kerstmis.',
-        'gallery-8-caption':    'Sjaak vraagt Claire ten huwelijk en overhandigt haar zijn handgesneden houten klompen.',
+        'gallery-3-caption':    'Een rit op de historische kabeltrams van San Francisco.',
+        'gallery-4-caption':    'Genieten van het strand in het zuiden van Oregon.',
+        'gallery-5-caption':    'De viering van 4 juli.',
+        'gallery-6-caption':    'Ons "Abiprom", ter viering van Sjaaks Abitur en Claire\'s eindexamen.',
+        'gallery-7-caption':    'Onze families ontmoeten elkaar voor het eerst.',
+        'gallery-8-caption':    'Detectives spelen.',
+        'gallery-9-caption':    'Een privérondleiding in het Streekmuseum in Eersel door Sjaaks grootvader.',
+        'gallery-10-caption':   'Krakau bezoeken met Sjaaks vader, Wil.',
+        'gallery-11-caption':   'Seattle bezoeken rond Kerstmis.',
+        'gallery-12-caption':   'Koffie recenseren is een vast ritueel in onze relatie. Dit was in Seattle.',
+        'gallery-13-caption':   'Wandelen bij Silver Falls.',
+        'gallery-14-caption':   'Sjaak vraagt Claire ten huwelijk en overhandigt haar zijn handgesneden houten klompen.',
+        'gallery-15-caption':   'Verlovingsfotoshoot.',
 
         'mass-heading':         'Huwelijksmis',
         'mass-note':            'Gelieve 15 minuten van tevoren aanwezig te zijn, uw mobiele telefoons uit te zetten en (alstublieft!) geen foto\'s te maken.',
@@ -524,12 +560,19 @@ const translations = {
         'moments-heading':      'Momente durch die Jahre',
         'gallery-1-caption':    'Unser erstes Date in Köln.',
         'gallery-2-caption':    'Sjaaks erstes Mal in den USA.',
-        'gallery-3-caption':    'Feier zum 4. Juli.',
-        'gallery-4-caption':    'Unser "Abiprom" – zur Feier von Sjaaks Abitur und Claires High-School-Abschluss.',
-        'gallery-5-caption':    'Unsere Familien treffen sich zum ersten Mal.',
-        'gallery-6-caption':    '007.',
-        'gallery-7-caption':    'Seattle zur Weihnachtszeit.',
-        'gallery-8-caption':    'Sjaak macht Claire einen Heiratsantrag und überreicht ihr seine handgeschnitzten Holzschuhe.',
+        'gallery-3-caption':    'Eine Fahrt mit den historischen Seilbahnen von San Francisco.',
+        'gallery-4-caption':    'Am Strand im Süden Oregons.',
+        'gallery-5-caption':    'Feier zum 4. Juli.',
+        'gallery-6-caption':    'Unser "Abiprom" – zur Feier von Sjaaks Abitur und Claires High-School-Abschluss.',
+        'gallery-7-caption':    'Unsere Familien treffen sich zum ersten Mal.',
+        'gallery-8-caption':    'Detektive spielen.',
+        'gallery-9-caption':    'Eine private Führung im Streekmuseum in Eersel durch Sjaaks Großvater.',
+        'gallery-10-caption':   'Krakau besuchen mit Sjaaks Vater, Wil.',
+        'gallery-11-caption':   'Seattle zur Weihnachtszeit.',
+        'gallery-12-caption':   'Kaffee zu bewerten ist eine feste Tradition in unserer Beziehung. Dies war in Seattle.',
+        'gallery-13-caption':   'Wandern bei Silver Falls.',
+        'gallery-14-caption':   'Sjaak macht Claire einen Heiratsantrag und überreicht ihr seine handgeschnitzten Holzschuhe.',
+        'gallery-15-caption':   'Verlobungsfotoshooting.',
 
         'mass-heading':         'Trauungsmesse',
         'mass-note':            'Bitte kommen Sie 15 Minuten früher, schalten Sie Ihre Handys stumm und (bitte!) machen Sie keine Fotos.',
@@ -722,6 +765,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
