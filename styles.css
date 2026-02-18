@@ -79,56 +79,7 @@
     --font-playfair: 'Playfair Display', serif;
 }
 
-/* ==========================================
-   SPLASH / LOADING SCREEN
-   ========================================== */
-
-.splash-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none; /* allows click-through once hidden */
-    transition: opacity 0.8s ease;
-}
-
-.splash-screen.splash-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.splash-screen.splash-gone {
-    display: none;
-}
-
-.splash-bg {
-    position: absolute;
-    inset: 0;
-    background-color: var(--dark-red);
-    background-image: url('img/redpattern-1.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.splash-logo {
-    position: relative;
-    z-index: 1;
-    width: 220px;
-    max-width: 50vw;
-    height: auto;
-    animation: splashSpin 4s linear infinite;
-    filter: drop-shadow(0 0 24px rgba(0,0,0,0.4));
-}
-
-@keyframes splashSpin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
-/* ==========================================
-   BASE STYLES */
+/* BASE STYLES */
 
 * {
     margin: 0;
@@ -542,7 +493,10 @@ section {
 }
 
 /*
- * 3. Quote sits at 75% from bottom; */
+ * 3. Quote sits at 70% from top:
+ *    margin-top: 70vh pushes container top to 70% of viewport,
+ *    then transform: translateY(-50%) centers it on that line.
+ */
 .quote-container {
     position: relative;
     z-index: 10;
@@ -1272,5 +1226,6 @@ section {
         max-height: 60px;
     }
 }
+
 
 
