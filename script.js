@@ -128,8 +128,29 @@ window.addEventListener('scroll', () => {
 
 const storyVideo = document.querySelector('.story-video');
 if (storyVideo) {
+    // Attempt to play; catch rejection (Safari/iOS autoplay policy)
+    function tryPlay() {
+        const promise = storyVideo.play();
+        if (promise !== undefined) {
+            promise.catch(() => {
+                // Autoplay was prevented — wait for a user gesture then retry
+                const resumeOnInteraction = () => {
+                    storyVideo.play().catch(() => {});
+                };
+                document.addEventListener('touchstart', resumeOnInteraction, { once: true });
+                document.addEventListener('click', resumeOnInteraction, { once: true });
+            });
+        }
+    }
+
     new IntersectionObserver(
-        entries => entries.forEach(e => e.isIntersecting ? storyVideo.play() : storyVideo.pause()),
+        entries => entries.forEach(e => {
+            if (e.isIntersecting) {
+                tryPlay();
+            } else {
+                storyVideo.pause();
+            }
+        }),
         { threshold: 0.3 }
     ).observe(storyVideo);
 }
@@ -257,7 +278,7 @@ function setupScrollAnimations() {
 function setupIntermission() {
     const intermission = document.querySelector('.intermission');
     const bg           = document.querySelector('.intermission-bg');
-    const quote        = d('intermission-quote');
+    const quote        = document.getElementById('intermission-quote');
     if (!intermission || !quote || !bg) return;
 
     // --- Build letter spans, set initial (hidden, offset) state ---
@@ -701,5 +722,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
