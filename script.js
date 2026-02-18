@@ -48,36 +48,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// SPLASH SCREEN — shows for ~3s, then fades
-// Hero name animations fire after splash exits
+// LOADING STATE — body fades in on load
 // ==========================================
 
-(function() {
-    const splash   = document.getElementById('splashScreen');
-    const DURATION = 3000; // ms the splash stays fully visible
-    const FADE     = 800;  // ms of fade-out (matches CSS transition)
-
-    // Keep body invisible until splash starts fading
-    document.body.style.opacity = '0';
-
-    window.addEventListener('load', () => {
-        // Reveal the body (splash is on top anyway)
-        document.body.style.transition = 'opacity 0.3s ease';
-        document.body.style.opacity    = '1';
-
-        setTimeout(() => {
-            // Begin fade-out of splash
-            splash.classList.add('splash-hidden');
-
-            // After fade completes, remove from DOM flow and fire hero anims
-            setTimeout(() => {
-                splash.classList.add('splash-gone');
-                startHeroAnimations();
-            }, FADE);
-        }, DURATION);
-    });
-})();
-
+document.body.style.opacity = '0';
+window.addEventListener('load', () => {
+    document.body.style.transition = 'opacity 0.5s ease';
+    document.body.style.opacity    = '1';
+});
 
 // ==========================================
 // PRELOAD CRITICAL IMAGES
@@ -89,7 +67,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// HERO — clarify animation (called after splash exits)
+// HERO — clarify animation on load (once)
 // ==========================================
 
 function clarifyText(element, startDelay = 0) {
@@ -119,15 +97,15 @@ function clarifyText(element, startDelay = 0) {
     });
 }
 
-function startHeroAnimations() {
+window.addEventListener('load', () => {
     const name1     = document.getElementById('name1');
     const ampersand = document.getElementById('ampersand');
     const name2     = document.getElementById('name2');
 
-    if (name1)     clarifyText(name1, 200);
-    if (ampersand) setTimeout(() => ampersand.classList.add('active'), 1200);
-    if (name2)     clarifyText(name2, 1700);
-}
+    if (name1)     clarifyText(name1, 500);
+    if (ampersand) setTimeout(() => ampersand.classList.add('active'), 1500);
+    if (name2)     clarifyText(name2, 2000);
+});
 
 // ==========================================
 // LOGO ROTATION ON SCROLL
@@ -764,7 +742,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLanguageSwitcher();
 });
 
-console.log('Wedding website initialized successfully!');
+console.log('Wedding website initialized successfully!');;
+
 
 
 
