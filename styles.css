@@ -1,12 +1,8 @@
-/* ==========================================
-   GOOGLE FONTS
-   ========================================== */
+/* GOOGLE FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
 
-/* ==========================================
-   FONT DECLARATIONS
-   ========================================== */
+/* FONT DECLARATIONS */
 
 @font-face {
     font-family: 'Andasia';
@@ -68,9 +64,7 @@
     font-display: swap;
 }
 
-/* ==========================================
-   CSS VARIABLES
-   ========================================== */
+/* CSS VARIABLES */
 
 :root {
     --dark-gray-green: #1a1e1c;
@@ -85,9 +79,7 @@
     --font-playfair: 'Playfair Display', serif;
 }
 
-/* ==========================================
-   BASE STYLES
-   ========================================== */
+/* BASE STYLES */
 
 * {
     margin: 0;
@@ -1225,3 +1217,4 @@ section {
         max-height: 60px;
     }
 }
+
