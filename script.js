@@ -422,6 +422,23 @@ const translations = {
         'gallery-14-caption':   'Sjaak proposes to Claire and hands her his hand-carved wooden clogs.',
         'gallery-15-caption':   'Engagement photoshoot.',
 
+        'arch-1-title':     'Exhortation before Marriage',
+        'arch-2-title':     'History of Mount Angel',
+        'arch-3-title':     'Wedding Pictures',
+
+        'arch-1-p1': 'My dear friends: You are about to enter upon a union which is most sacred and most serious. It is most sacred, because it is established by God himself. By it, he gave to man a share in the greatest work of creation, the work of the continuation of the human race. And in this way he sanctified human love and enabled man and woman to help each other live as children of God, by sharing a common life under his fatherly care.',
+        'arch-1-p2': 'Because God himself is thus its author, marriage is of its very nature a holy institution, requiring of those who enter into it a complete and unreserved giving of self.',
+        'arch-1-p3': 'This union, then, is most serious, because it will bind you together for life in a relationship so close and so intimate, that it will profoundly influence your whole future. That future, with its hopes and disappointments, its successes and its failures, its pleasures and its pains, its joys and its sorrows, is hidden from your eyes. You know that these elements are mingled in every life, and are to be expected in your own. And so not knowing what is before you, you take each other for better or for worse, for richer or for poorer, in sickness and in health, until death.',
+        'arch-1-p4': 'Truly, then, these words are most serious. It is a beautiful tribute to your undoubted faith in each other, that recognizing their full import, you are, nevertheless, so willing and ready to pronounce them. And because these words involve such solemn obligations, it is most fitting that you rest the security of your wedded life upon the great principle of self-sacrifice. And so you begin your married life by the voluntary and complete surrender of your individual lives in the interest of that deeper and wider life which you are to have in common. Henceforth you will belong entirely to each other; you will be one in mind, one in heart, and one in affections. And whatever sacrifices you may hereafter be required to make to preserve this mutual life, always make them generously. Sacrifice is usually difficult and irksome. Only love can make it easy, and perfect love can make it a joy. We are willing to give in proportion as we love. And when love is perfect, the sacrifice is complete. God so loved the world that he gave his only-begotten Son, and the Son so loved us that he gave himself for our salvation. "Greater love than this no man hath, that a man lay down his life for his friends."',
+        'arch-1-p5': 'No greater blessing can come to your married life than pure conjugal love, loyal and true to the end. May, then, this love with which you join your hands and hearts today never fail, but grow deeper and stronger as the years go on. And if true love and the unselfish spirit of perfect sacrifice guide your every action, you can expect the greatest measure of earthly happiness that may be allotted to man in this vale of tears. The rest is in the hands of God.',
+        'arch-1-p6': 'Nor will God be wanting to your needs, he will pledge you the life-long support of his graces. (1961 Collectio Rituum)',
+
+        'arch-2-p1': 'Mount Angel is a small town in the Willamette Valley of Oregon, founded in 1882 by Benedictine monks who emigrated from the Abbey of Engelberg in Switzerland. Captivated by a hill that reminded them of their alpine homeland, they established what would become the Abbey of Mount Angel — a place of prayer, scholarship, and hospitality that has anchored the community for over a century.',
+        'arch-2-p2': 'The town itself carries a distinctly German and Swiss Catholic character, shaped by the generations of immigrants who settled alongside the monks. Its annual Oktoberfest, held each September, draws hundreds of thousands of visitors and celebrates this heritage with music, food, and fellowship. The Abbey\'s library — a masterwork designed by Finnish architect Alvar Aalto — stands as one of the most celebrated examples of modern sacred architecture in the world.',
+        'arch-2-p3': 'St. Mary Catholic Church, where Claire and Sjaak will be married, stands in the heart of this community — a fitting place to begin a life together rooted in faith.',
+
+        'arch-3-p1': 'Oops — looks like this page is still empty! Check back after the wedding for photos from our big day.',
+
         'mass-heading':         'Nuptial Mass',
         'mass-note':            'Please arrive 15 minutes early, silence your cellphones, and (please!) no photos.',
 
@@ -487,6 +504,23 @@ const translations = {
         'gallery-14-caption':   'Sjaak vraagt Claire ten huwelijk en overhandigt haar zijn handgesneden houten klompen.',
         'gallery-15-caption':   'Verlovingsfotoshoot.',
 
+        'arch-1-title':     'Vermaning voor het Huwelijk',
+        'arch-2-title':     'Geschiedenis van Mount Angel',
+        'arch-3-title':     'Huwelijksfoto\'s',
+
+        'arch-1-p1': 'Dierbare vrienden: U staat op het punt een verbintenis aan te gaan die heilig en ernstig is. Zij is heilig, omdat God zelf haar heeft ingesteld. Door haar gaf Hij de mens een aandeel in het grootste werk van de schepping: het voortbrengen van het menselijk geslacht. En zo heiligde Hij de menselijke liefde en stelde man en vrouw in staat elkaar te helpen als kinderen van God te leven, door een gemeenschappelijk leven te leiden onder zijn vaderlijke zorg.',
+        'arch-1-p2': 'Omdat God zelf de auteur is, is het huwelijk van nature een heilige instelling, die van hen die het aangaan een volledige en onvoorwaardelijke overgave van zichzelf vereist.',
+        'arch-1-p3': 'Deze verbintenis is ook ernstig, omdat zij u voor het leven bindt in een relatie die zo nauw en intiem is, dat zij uw gehele toekomst diepgaand zal beïnvloeden. Die toekomst, met haar hoop en teleurstellingen, haar successen en mislukkingen, haar vreugden en smarten, is voor uw ogen verborgen. U weet dat deze elementen in elk leven aanwezig zijn en ook in het uwe te verwachten zijn. En zo, niet wetend wat u te wachten staat, neemt u elkaar in voor- en tegenspoed, in rijkdom en armoede, in ziekte en gezondheid, totdat de dood u scheidt.',
+        'arch-1-p4': 'Werkelijk, deze woorden zijn ernstig. Het is een schoon bewijs van uw ongetwijfeld geloof in elkaar, dat u, al hun volle betekenis kennend, toch zo bereid en klaar bent ze uit te spreken. En omdat deze woorden zo plechtige verplichtingen inhouden, is het passend dat u de zekerheid van uw huwelijksleven bouwt op het grote beginsel van zelfopoffering. En zo begint u uw huwelijksleven met de vrijwillige en volledige overgave van uw afzonderlijke levens ten gunste van dat diepere en rijkere leven dat u samen zult leiden. Voortaan zult u geheel aan elkaar toebehoren; u zult één zijn in geest, één van hart en één in genegenheid. En welke offers u ook in de toekomst gebracht mogen worden om dit gemeenschappelijke leven te bewaren, breng ze altijd grootmoedig. Opoffering is gewoonlijk moeilijk en bezwaarlijk. Alleen de liefde kan haar gemakkelijk maken, en volmaakte liefde kan haar tot een vreugde maken. Wij zijn bereid te geven naar de maat van onze liefde. En wanneer de liefde volmaakt is, is de opoffering volledig. God had de wereld zo lief dat Hij zijn eniggeboren Zoon gaf, en de Zoon had ons zo lief dat Hij zichzelf gaf voor onze verlossing. "Niemand heeft grotere liefde dan hij die zijn leven geeft voor zijn vrienden."',
+        'arch-1-p5': 'Geen grotere zegen kan over uw huwelijksleven komen dan zuivere huwelijksliefde, trouw en oprecht tot het einde. Moge dan deze liefde, waarmee u vandaag uw handen en harten samenvoegt, nooit ophouden, maar dieper en sterker worden naarmate de jaren verstrijken. En als ware liefde en de onzelfzuchtige geest van volmaakte opoffering al uw daden leiden, kunt u de grootste mate van aards geluk verwachten die aan de mens in dit tranendal beschoren is. De rest ligt in Gods handen.',
+        'arch-1-p6': 'God zal ook niet tekortschieten in uw noden: Hij geeft u de levenslange steun van zijn genade. (1961 Collectio Rituum)',
+
+        'arch-2-p1': 'Mount Angel is een klein stadje in de Willamette Valley van Oregon, gesticht in 1882 door Benedictijnse monniken die emigreerden vanuit de abdij van Engelberg in Zwitserland. Gefascineerd door een heuvel die hen aan hun Alpenheimat deed denken, stichtten zij wat de Abdij van Mount Angel zou worden — een plek van gebed, geleerdheid en gastvrijheid die de gemeenschap al meer dan een eeuw draagt.',
+        'arch-2-p2': 'Het stadje zelf heeft een uitgesproken Duits en Zwitsers-katholiek karakter, gevormd door de generaties immigranten die naast de monniken zijn neergestreken. Zijn jaarlijkse Oktoberfest, gehouden elke september, trekt honderdduizenden bezoekers en viert dit erfgoed met muziek, eten en gezelligheid. De bibliotheek van de abdij — een meesterwerk ontworpen door de Finse architect Alvar Aalto — geldt als een van de meest geroemde voorbeelden van moderne sacrale architectuur ter wereld.',
+        'arch-2-p3': 'De St. Mary Catholic Church, waar Claire en Sjaak zullen trouwen, staat in het hart van deze gemeenschap — een passende plek om samen een leven te beginnen dat geworteld is in geloof.',
+
+        'arch-3-p1': 'Oeps — het lijkt erop dat deze pagina nog leeg is! Kom na de bruiloft terug voor foto\'s van onze grote dag.',
+
         'mass-heading':         'Huwelijksmis',
         'mass-note':            'Gelieve 15 minuten van tevoren aanwezig te zijn, uw mobiele telefoons uit te zetten en (alstublieft!) geen foto\'s te maken.',
 
@@ -551,6 +585,23 @@ const translations = {
         'gallery-13-caption':   'Wandern bei Silver Falls.',
         'gallery-14-caption':   'Sjaak macht Claire einen Heiratsantrag und überreicht ihr seine handgeschnitzten Holzschuhe.',
         'gallery-15-caption':   'Verlobungsfotoshooting.',
+
+        'arch-1-title':     'Ermahnung vor der Ehe',
+        'arch-2-title':     'Geschichte von Mount Angel',
+        'arch-3-title':     'Hochzeitsfotos',
+
+        'arch-1-p1': 'Liebe Freunde: Sie stehen im Begriff, eine Verbindung einzugehen, die heilig und ernst zugleich ist. Sie ist heilig, weil Gott selbst sie eingesetzt hat. Durch sie gab er dem Menschen Anteil an dem größten Werk der Schöpfung: der Weitergabe des menschlichen Lebens. So heiligte er die menschliche Liebe und ermöglichte es Mann und Frau, einander zu helfen, als Kinder Gottes zu leben, indem sie ein gemeinsames Leben unter seiner väterlichen Fürsorge führen.',
+        'arch-1-p2': 'Weil Gott selbst ihr Urheber ist, ist die Ehe ihrem Wesen nach eine heilige Institution, die von denen, die sie eingehen, eine vollständige und vorbehaltlose Hingabe ihrer selbst verlangt.',
+        'arch-1-p3': 'Diese Verbindung ist auch ernst, weil sie Sie auf Lebenszeit in einer Beziehung bindet, die so eng und innig ist, dass sie Ihre ganze Zukunft tiefgreifend beeinflussen wird. Diese Zukunft, mit ihren Hoffnungen und Enttäuschungen, ihren Erfolgen und Misserfolgen, ihren Freuden und Leiden, ist Ihren Augen verborgen. Sie wissen, dass diese Elemente in jedem Leben vorhanden sind und auch in Ihrem eigenen zu erwarten sind. Und so, ohne zu wissen, was vor Ihnen liegt, nehmen Sie einander in guten wie in schlechten Zeiten, in Reichtum und Armut, in Krankheit und Gesundheit, bis der Tod Sie scheidet.',
+        'arch-1-p4': 'Wahrlich, diese Worte sind ernst. Es ist ein schönes Zeugnis Ihres unzweifelhaften Vertrauens ineinander, dass Sie, obwohl Sie ihre volle Bedeutung kennen, dennoch so bereit und willig sind, sie auszusprechen. Und weil diese Worte so feierliche Verpflichtungen beinhalten, ist es höchst angemessen, dass Sie die Sicherheit Ihres Ehelebens auf dem großen Grundsatz der Selbstaufopferung aufbauen. So beginnen Sie Ihr eheliches Leben mit der freiwilligen und vollständigen Hingabe Ihres individuellen Lebens zugunsten jenes tieferen und weiteren Lebens, das Sie gemeinsam führen werden. Von nun an werden Sie ganz einander gehören; Sie werden eines Sinnes, eines Herzens und einer Zuneigung sein. Welche Opfer auch immer von Ihnen verlangt werden mögen, um dieses gemeinsame Leben zu bewahren, bringen Sie sie stets großzügig. Opfer sind gewöhnlich schwer und mühsam. Nur die Liebe kann sie leicht machen, und vollkommene Liebe kann sie zur Freude machen. Wir sind bereit zu geben in dem Maße, wie wir lieben. Und wenn die Liebe vollkommen ist, ist das Opfer vollständig. Gott liebte die Welt so sehr, dass er seinen eingeborenen Sohn gab, und der Sohn liebte uns so sehr, dass er sich selbst für unsere Erlösung hingab. „Niemand hat größere Liebe als der, der sein Leben für seine Freunde hingibt."',
+        'arch-1-p5': 'Kein größerer Segen kann über Ihr Eheleben kommen als reine eheliche Liebe, treu und aufrichtig bis zum Ende. Möge diese Liebe, mit der Sie heute Ihre Hände und Herzen vereinen, niemals erlöschen, sondern tiefer und stärker werden, je mehr die Jahre vergehen. Und wenn wahre Liebe und der selbstlose Geist vollkommener Aufopferung all Ihr Handeln leiten, dürfen Sie das höchste Maß an irdischem Glück erwarten, das dem Menschen in diesem Jammertal beschieden sein mag. Das Übrige liegt in Gottes Händen.',
+        'arch-1-p6': 'Gott wird Ihren Bedürfnissen nicht fehlen; er schenkt Ihnen die lebenslange Unterstützung seiner Gnaden. (1961 Collectio Rituum)',
+
+        'arch-2-p1': 'Mount Angel ist eine kleine Stadt im Willamette Valley von Oregon, gegründet 1882 von Benediktinermönchen, die aus dem Kloster Engelberg in der Schweiz einwanderten. Fasziniert von einem Hügel, der sie an ihre alpine Heimat erinnerte, gründeten sie die Abtei Mount Angel — einen Ort des Gebets, der Gelehrsamkeit und der Gastfreundschaft, der die Gemeinde seit über einem Jahrhundert trägt.',
+        'arch-2-p2': 'Die Stadt selbst trägt einen ausgesprochen deutsch-schweizerisch-katholischen Charakter, geformt durch die Generationen von Einwanderern, die sich neben den Mönchen niederließen. Das alljährliche Oktoberfest im September zieht Hunderttausende Besucher an und feiert dieses Erbe mit Musik, Essen und Geselligkeit. Die Bibliothek der Abtei — ein Meisterwerk des finnischen Architekten Alvar Aalto — gilt als eines der bedeutendsten Beispiele moderner Sakralarchitektur weltweit.',
+        'arch-2-p3': 'Die St. Mary Catholic Church, wo Claire und Sjaak heiraten werden, steht im Herzen dieser Gemeinde — ein passender Ort, um gemeinsam ein Leben zu beginnen, das im Glauben verwurzelt ist.',
+
+        'arch-3-p1': 'Hoppla — diese Seite ist noch leer! Schauen Sie nach der Hochzeit wieder vorbei, um Fotos von unserem großen Tag zu sehen.',
 
         'mass-heading':         'Trauungsmesse',
         'mass-note':            'Bitte kommen Sie 15 Minuten früher, schalten Sie Ihre Handys stumm und (bitte!) machen Sie keine Fotos.',
@@ -731,8 +782,58 @@ document.querySelectorAll('.rsvp-form input, .rsvp-form select, .rsvp-form texta
     });
 
 // ==========================================
-// INITIALISE EVERYTHING ON DOM READY
+// ARCH OVERLAYS — open / close
 // ==========================================
+
+function setupArchOverlays() {
+    const cards   = document.querySelectorAll('.arch-card');
+    const overlays = document.querySelectorAll('.arch-overlay');
+
+    function openOverlay(id) {
+        const overlay = document.getElementById(id);
+        if (!overlay) return;
+        overlay.classList.add('active');
+        document.body.classList.add('overlay-open');
+        // Focus the close button for accessibility
+        const closeBtn = overlay.querySelector('.arch-overlay-close');
+        if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+    }
+
+    function closeAll() {
+        overlays.forEach(o => o.classList.remove('active'));
+        document.body.classList.remove('overlay-open');
+    }
+
+    // Open on card click / Enter / Space
+    cards.forEach(card => {
+        card.addEventListener('click', () => openOverlay(card.dataset.overlay));
+        card.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openOverlay(card.dataset.overlay);
+            }
+        });
+    });
+
+    // Close on × button
+    document.querySelectorAll('.arch-overlay-close').forEach(btn => {
+        btn.addEventListener('click', closeAll);
+    });
+
+    // Close on backdrop click (outside inner box)
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay) closeAll();
+        });
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeAll();
+    });
+}
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     setupScrollAnimations();
@@ -740,9 +841,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setupGalleryScrollbar();
     setupGalleryClick();
     setupLanguageSwitcher();
+    setupArchOverlays();
 });
 
-console.log('Wedding website initialized successfully!');;
+console.log('Wedding website initialized successfully!');
+
 
 
 
