@@ -1311,6 +1311,15 @@ body.overlay-open {
     transform: rotate(90deg);
 }
 
+
+.arch-overlay-source {
+    font-family: var(--font-cormorant);
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(228, 219, 147, 0.65);
+    margin-bottom: 1.6rem !important;
+}
+
 .arch-overlay-title {
     font-family: var(--font-cormorant);
     font-size: 30px;
@@ -1340,7 +1349,16 @@ body.overlay-open {
         max-height: 85vh;
     }
 
-    .arch-overlay-title {
+    
+.arch-overlay-source {
+    font-family: var(--font-cormorant);
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(228, 219, 147, 0.65);
+    margin-bottom: 1.6rem !important;
+}
+
+.arch-overlay-title {
         font-size: 24px;
     }
 
@@ -1435,6 +1453,7 @@ body.overlay-open {
         max-height: 60px;
     }
 }
+
 
 
 
