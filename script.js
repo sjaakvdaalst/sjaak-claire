@@ -128,8 +128,29 @@ window.addEventListener('scroll', () => {
 
 const storyVideo = document.querySelector('.story-video');
 if (storyVideo) {
+    // Attempt to play; catch rejection (Safari/iOS autoplay policy)
+    function tryPlay() {
+        const promise = storyVideo.play();
+        if (promise !== undefined) {
+            promise.catch(() => {
+                // Autoplay was prevented — wait for a user gesture then retry
+                const resumeOnInteraction = () => {
+                    storyVideo.play().catch(() => {});
+                };
+                document.addEventListener('touchstart', resumeOnInteraction, { once: true });
+                document.addEventListener('click', resumeOnInteraction, { once: true });
+            });
+        }
+    }
+
     new IntersectionObserver(
-        entries => entries.forEach(e => e.isIntersecting ? storyVideo.play() : storyVideo.pause()),
+        entries => entries.forEach(e => {
+            if (e.isIntersecting) {
+                tryPlay();
+            } else {
+                storyVideo.pause();
+            }
+        }),
         { threshold: 0.3 }
     ).observe(storyVideo);
 }
@@ -257,7 +278,7 @@ function setupScrollAnimations() {
 function setupIntermission() {
     const intermission = document.querySelector('.intermission');
     const bg           = document.querySelector('.intermission-bg');
-    const quote        = d('intermission-quote');
+    const quote        = document.getElementById('intermission-quote');
     if (!intermission || !quote || !bg) return;
 
     // --- Build letter spans, set initial (hidden, offset) state ---
@@ -380,9 +401,9 @@ const translations = {
         'welcome-p2':           'Below, you will find all details about the ceremony, reception, and more. We\'re grateful for your presence as we embark on this great lifelong adventure together.',
 
         'story-heading':        'A Peek Into Our Story',
-        'story-p1':             'Our journey began in Germany in 2021 when Claire studied abroad at Sjaak\'s high school in Eschweiler. We were classmates, seatmates, and soon — inseparable friends.',
-        'story-p2':             'What started as shared laughter in religion class grew into a friendship rooted in faith, discovery, and wonder. We spent weekends hiking, going to Mass together, and sharing long conversations over coffee.',
-        'story-p3':             'Through time, letters, and thousands of miles, our story has unfolded beautifully — guided by God\'s providence and deepened through the love of family, adventure, and prayer.',
+        'story-p1':             'Claire and I, Sjaak, first met in 2021 when she studied abroad at my high school in Eschweiler, Germany. We ended up as classmates and seatmates, and pretty quickly became close friends.',
+        'story-p2':             'What started with joking around in the classroom turned into a real friendship. We spent weekends hiking, going to Mass together, and talking for hours over coffee.',
+        'story-p3':             'Over the years, we\'ve kept in touch through letters, calls, and visits across thousands of miles. In June last year, Sjaak proposed to Claire at the Abbey of Mount Angel with a pair of wooden clogs. We’re grateful for where our relationship has led us and are excited for the future.',
 
         'moments-heading':      'Moments Through the Years',
         'gallery-1-caption':    'Our first date in Cologne.',
@@ -395,18 +416,18 @@ const translations = {
         'gallery-8-caption':    'Sjaak proposes to Claire and hands her his hand-carved wooden clogs.',
 
         'mass-heading':         'Nuptial Mass',
-        'mass-note':            'Please arrive 15 minutes early. There\'s a parking lot next to the church.',
+        'mass-note':            'Please arrive 15 minutes early, silence your cellphones, and (please!) no photos.',
 
         'reception-heading':    'Reception',
         'reception-menu-link':  'Link to menu.',
 
         'faq-heading':          'Commonly Asked Questions',
         'faq-q1':               'Is there a dress code?',
-        'faq-a1':               'For the Church, please dress modestly (e.g., covered shoulders).',
-        'faq-q2':               'Are children welcome?',
-        'faq-a2':               'Yes! Make sure to mention it in the RSVP if applicable.',
+        'faq-a1':               'In general, formal attire is appreciated. For the Church, please dress modestly (e.g., covered shoulders).',
+        'faq-q2':               'What is parking like?',
+        'faq-a2':               'At St. Mary, there is a parking lot next to the church. At Sorella, there is street parking available.',
         'faq-q3':               'Where should we stay?',
-        'faq-a3':               'As there are not many options in the Mt Angel/Silverton area, Salem has some options.',
+        'faq-a3':               'As there are not many options in the Mt Angel/Silverton area, Salem has some reasonable places to stay.',
 
         'registry-heading':     'Your presence is truly the best gift we could ask for.',
         'registry-message':     'But if you feel called to give a little something, we\'ve put together a small registry.\nClick the link below to reach the gift registry.',
@@ -430,20 +451,20 @@ const translations = {
     nl: {
         'nav-story':            'Ons Verhaal',
         'nav-mass':             'Huwelijksmis',
-        'nav-registry':         'Verlanglijst',
+        'nav-registry':         'Cadeaulijst',
         'nav-rsvp':             'RSVP',
 
         'welcome-heading':      'Welkom!',
-        'welcome-p1':           'Claire en Sjaak nodigen u met vreugde uit om deel te nemen aan de viering van hun verbintenis in het Sacrament van het Heilig Huwelijk.',
+        'welcome-p1':           'Claire en Sjaak nodigen u met vreugde uit om deel te nemen aan de viering van hun verbintenis in het Sacrament van het Huwelijk.',
         'welcome-p2':           'Hieronder vindt u alle details over de ceremonie, de receptie en meer. Wij zijn dankbaar voor uw aanwezigheid terwijl wij samen aan dit grote, levenslange avontuur beginnen.',
 
-        'story-heading':        'Een Blik op Ons Verhaal',
-        'story-p1':             'Ons verhaal begon in Duitsland in 2021, toen Claire een uitwisselingsjaar deed op Sjaaks middelbare school in Eschweiler. We waren klasgenoten, zaten naast elkaar en werden al snel — onafscheidelijke vrienden.',
-        'story-p2':             'Wat begon met gedeeld gelach in de godsdienstles groeide uit tot een vriendschap geworteld in geloof, ontdekking en verwondering. We brachten weekenden door met wandelen, samen naar de mis gaan en lange gesprekken over koffie.',
-        'story-p3':             'Door de tijd, brieven en duizenden kilometers heeft ons verhaal zich prachtig ontvouwd — geleid door Gods voorzienigheid en verdiept door de liefde van familie, avontuur en gebed.',
+        'story-heading':        'Een Kijkje in Ons Verhaal',
+        'story-p1':             'Claire en ik, Sjaak, ontmoetten elkaar voor het eerst in 2021 toen zij een semester in het buitenland studeerde aan mijn middelbare school in Eschweiler, Duitsland. We kwamen bij elkaar in de klas te zitten en werden al snel goede vrienden.',
+        'story-p2':             'Wat begon met grapjes in de klas, groeide uit tot een echte vriendschap. We brachten weekenden door met wandelen, samen naar de mis gaan en urenlang kletsen onder het genot van een kop koffie.',
+        'story-p3':             'In de loop der jaren zijn we in contact gebleven via brieven, telefoontjes en bezoeken over duizenden kilometers. In juni vorig jaar vroeg Sjaak Claire ten huwelijk in de abdij van Mount Angel met een paar houten klompen. We zijn dankbaar voor waar onze relatie ons heeft gebracht en kijken vol enthousiasme naar de toekomst.',
 
         'moments-heading':      'Momenten door de Jaren',
-        'gallery-1-caption':    'Ons eerste afspraakje in Keulen.',
+        'gallery-1-caption':    'Ons eerste date in Keulen.',
         'gallery-2-caption':    'Sjaaks allereerste bezoek aan de VS.',
         'gallery-3-caption':    'De viering van 4 juli.',
         'gallery-4-caption':    'Ons "Abiprom", ter viering van Sjaaks Abitur en Claire\'s eindexamen.',
@@ -453,22 +474,22 @@ const translations = {
         'gallery-8-caption':    'Sjaak vraagt Claire ten huwelijk en overhandigt haar zijn handgesneden houten klompen.',
 
         'mass-heading':         'Huwelijksmis',
-        'mass-note':            'Gelieve 15 minuten vroeg te komen. Er is een parkeerplaats naast de kerk.',
+        'mass-note':            'Gelieve 15 minuten van tevoren aanwezig te zijn, uw mobiele telefoons uit te zetten en (alstublieft!) geen foto\'s te maken.',
 
         'reception-heading':    'Receptie',
         'reception-menu-link':  'Link naar het menu.',
 
         'faq-heading':          'Veelgestelde Vragen',
-        'faq-q1':               'Is er een kledingvoorschrift?',
-        'faq-a1':               'Kleed u voor de kerk bescheiden (bijv. bedekte schouders).',
-        'faq-q2':               'Zijn kinderen welkom?',
-        'faq-a2':               'Ja! Vermeld dit in uw RSVP indien van toepassing.',
+        'faq-q1':               'Is er een dresscode?',
+        'faq-a1':               'Voor de kerk wordt u verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
+        'faq-q2':               'Hoe zit het met parkeren?',
+        'faq-a2':               'Bij St. Mary is er een parkeerplaats naast de kerk. Bij Sorella kun je langs de weg parkeren.',
         'faq-q3':               'Waar kunnen we verblijven?',
-        'faq-a3':               'Er zijn niet veel opties in het Mt Angel/Silverton-gebied, maar Salem heeft enkele mogelijkheden.',
+        'faq-a3':               'Er zijn niet veel opties in het Mt Angel/Silverton-gebied, maar Salem heeft enkele redelijke mogelijkheden.',
 
         'registry-heading':     'Uw aanwezigheid is werkelijk het mooiste cadeau dat wij ons kunnen wensen.',
-        'registry-message':     'Maar als u toch iets wilt geven, hebben wij een kleine verlanglijst samengesteld.\nKlik op onderstaande link om de verlanglijst te bezoeken.',
-        'registry-link':        'Bezoek onze verlanglijst',
+        'registry-message':     'Maar als u toch iets wilt geven, hebben wij een kleine cadeaulijst samengesteld.\nKlik op onderstaande link om de cadeaulijst te bezoeken.',
+        'registry-link':        'Bezoek onze cadeaulijst',
 
         'rsvp-heading':         'Meld u aan vóór 1 juni 2026',
         'rsvp-label-name':      'Volledige naam',
@@ -496,9 +517,9 @@ const translations = {
         'welcome-p2':           'Nachfolgend finden Sie alle Details zur Zeremonie, zum Empfang und mehr. Wir sind dankbar für Ihre Anwesenheit, wenn wir gemeinsam dieses große lebenslange Abenteuer beginnen.',
 
         'story-heading':        'Ein Blick auf unsere Geschichte',
-        'story-p1':             'Unsere Geschichte begann 2021 in Deutschland, als Claire ein Auslandsjahr an Sjaaks Gymnasium in Eschweiler verbrachte. Wir waren Klassenkameraden, saßen nebeneinander und wurden bald — unzertrennliche Freunde.',
-        'story-p2':             'Was mit gemeinsamem Lachen im Religionsunterricht begann, wuchs zu einer im Glauben, in der Entdeckung und im Staunen verwurzelten Freundschaft. Wir verbrachten Wochenenden beim Wandern, gemeinsamen Messebesuchen und langen Gesprächen bei Kaffee.',
-        'story-p3':             'Durch Zeit, Briefe und Tausende von Kilometern hat sich unsere Geschichte wunderschön entfaltet — geleitet von Gottes Vorsehung und vertieft durch die Liebe zu Familie, Abenteuer und Gebet.',
+        'story-p1':             'Claire und ich, Sjaak, lernten uns 2021 kennen, als sie ein Jahr an meiner Schule in Eschweiler verbrachte. Wir wurden Klassenkameraden und saßen nebeneinander und wurden schnell enge Freunde.',
+        'story-p2':             'Was mit Scherzen im Unterricht begann, entwickelte sich zu einer echten Freundschaft. Wir verbrachten Wochenenden mit Wandern, gingen gemeinsam zur Messe und unterhielten uns stundenlang bei ein paar Tassen Kaffee.',
+        'story-p3':             'Über die Jahre hielten wir durch Briefe, Anrufe und Besuche über Tausende von Kilometern hinweg Kontakt. Im Juni letzten Jahres machte Sjaak Claire in der Abtei Mount Angel mit einem Paar Holzschuhen einen Heiratsantrag. Wir sind dankbar für das, was unsere Beziehung uns gebracht hat, und freuen uns auf die Zukunft.',
 
         'moments-heading':      'Momente durch die Jahre',
         'gallery-1-caption':    'Unser erstes Date in Köln.',
@@ -511,18 +532,18 @@ const translations = {
         'gallery-8-caption':    'Sjaak macht Claire einen Heiratsantrag und überreicht ihr seine handgeschnitzten Holzschuhe.',
 
         'mass-heading':         'Trauungsmesse',
-        'mass-note':            'Bitte kommen Sie 15 Minuten früher. Es gibt einen Parkplatz neben der Kirche.',
+        'mass-note':            'Bitte kommen Sie 15 Minuten früher, schalten Sie Ihre Handys stumm und (bitte!) machen Sie keine Fotos.',
 
         'reception-heading':    'Empfang',
         'reception-menu-link':  'Link zur Speisekarte.',
 
         'faq-heading':          'Häufig gestellte Fragen',
         'faq-q1':               'Gibt es einen Dresscode?',
-        'faq-a1':               'Bitte kleiden Sie sich für die Kirche dezent (z.B. bedeckte Schultern).',
-        'faq-q2':               'Sind Kinder willkommen?',
-        'faq-a2':               'Ja! Bitte erwähnen Sie es in der RSVP, falls zutreffend.',
+        'faq-a1':               'Im Allgemeinen wird formelle Kleidung geschätzt. Für den Gottesdienst bitten wir Sie, sich dezent zu kleiden (z. B. Schultern bedeckt).',
+        'faq-q2':               'Wie sieht es mit Parkmöglichkeiten aus?',
+        'faq-a2':               'Bei St. Mary gibt es einen Parkplatz neben der Kirche. Bei Sorella kann man an der Straße parken.',
         'faq-q3':               'Wo können wir übernachten?',
-        'faq-a3':               'Da es in der Gegend um Mt Angel/Silverton wenige Möglichkeiten gibt, bietet Salem einige Optionen.',
+        'faq-a3':               'Da es in der Gegend um Mt Angel/Silverton wenige Möglichkeiten gibt, bietet Salem einige solide Optionen.',
 
         'registry-heading':     'Ihre Anwesenheit ist wirklich das schönste Geschenk, das wir uns wünschen können.',
         'registry-message':     'Aber wenn Sie dennoch etwas schenken möchten, haben wir eine kleine Wunschliste zusammengestellt.\nKlicken Sie auf den Link unten, um die Wunschliste zu besuchen.',
@@ -701,5 +722,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
+
+
 
 
