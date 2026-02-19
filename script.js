@@ -567,7 +567,7 @@ const translations = {
         'rsvp-submit':          'Aanmelding verzenden',
         'rsvp-alert':           'Bedankt voor uw aanmelding! We kijken ernaar uit om met u te vieren.',
 
-        'footer':               '© 2026 Claire & Sjaak. Alle rechten voorbehouden.',
+        'footer':               'Claire & Sjaak · 25 juli 2026',
     },
 
     de: {
@@ -650,7 +650,7 @@ const translations = {
         'rsvp-submit':          'Anmeldung absenden',
         'rsvp-alert':           'Vielen Dank für Ihre Anmeldung! Wir freuen uns darauf, mit Ihnen zu feiern.',
 
-        'footer':               '© 2026 Claire & Sjaak. Alle Rechte vorbehalten.',
+        'footer':               'Claire & Sjaak · 25. Juli 2026',
     }
 };
 
@@ -916,6 +916,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
