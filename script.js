@@ -128,19 +128,33 @@ window.addEventListener('scroll', () => {
 
 const storyVideo = document.querySelector('.story-video');
 if (storyVideo) {
+    // Safari sometimes ignores the HTML `muted` attribute — set it in JS too
+    storyVideo.muted = true;
+
     // Attempt to play; catch rejection (Safari/iOS autoplay policy)
     function tryPlay() {
+        storyVideo.muted = true; // enforce muted before every play attempt
         const promise = storyVideo.play();
         if (promise !== undefined) {
             promise.catch(() => {
                 // Autoplay was prevented — wait for a user gesture then retry
                 const resumeOnInteraction = () => {
+                    storyVideo.muted = true;
                     storyVideo.play().catch(() => {});
                 };
                 document.addEventListener('touchstart', resumeOnInteraction, { once: true });
-                document.addEventListener('click', resumeOnInteraction, { once: true });
+                document.addEventListener('click',      resumeOnInteraction, { once: true });
             });
         }
+    }
+
+    // On Safari, video data may not be ready yet — wait for canplay if needed
+    if (storyVideo.readyState >= 3) {
+        // Already have enough data — observer will call tryPlay
+    } else {
+        storyVideo.addEventListener('canplay', () => {
+            // Observer may have already triggered; this is a fallback
+        }, { once: true });
     }
 
     new IntersectionObserver(
@@ -509,7 +523,7 @@ const translations = {
         'arch-2-title':     'Geschiedenis van Mount Angel',
         'arch-3-title':     'Huwelijksfoto\'s',
 
-        'arch-1-source': 'Overgenomen uit de Collectio Rituum van 1962:',
+        'arch-1-source': 'Overgenomen en vertaald uit de Collectio Rituum van 1962:',
         'arch-1-p1': 'Dierbare vrienden: U staat op het punt een verbintenis aan te gaan die heilig en ernstig is. Zij is heilig, omdat God zelf haar heeft ingesteld. Door haar gaf Hij de mens een aandeel in het grootste werk van de schepping: het voortbrengen van het menselijk geslacht. En zo heiligde Hij de menselijke liefde en stelde man en vrouw in staat elkaar te helpen als kinderen van God te leven, door een gemeenschappelijk leven te leiden onder zijn vaderlijke zorg.',
         'arch-1-p2': 'Omdat God zelf de auteur is, is het huwelijk van nature een heilige instelling, die van hen die het aangaan een volledige en onvoorwaardelijke overgave van zichzelf vereist.',
         'arch-1-p3': 'Deze verbintenis is ook ernstig, omdat zij u voor het leven bindt in een relatie die zo nauw en intiem is, dat zij uw gehele toekomst diepgaand zal beïnvloeden. Die toekomst, met haar hoop en teleurstellingen, haar successen en mislukkingen, haar vreugden en smarten, is voor uw ogen verborgen. U weet dat deze elementen in elk leven aanwezig zijn en ook in het uwe te verwachten zijn. En zo, niet wetend wat u te wachten staat, neemt u elkaar in voor- en tegenspoed, in rijkdom en armoede, in ziekte en gezondheid, totdat de dood u scheidt.',
@@ -592,7 +606,7 @@ const translations = {
         'arch-2-title':     'Geschichte von Mount Angel',
         'arch-3-title':     'Hochzeitsfotos',
 
-        'arch-1-source': 'Aus der Collectio Rituum von 1962:',
+        'arch-1-source': 'Entnommen und übersetzt aus der Collectio Rituum von 1962:',
         'arch-1-p1': 'Liebe Freunde: Sie stehen im Begriff, eine Verbindung einzugehen, die heilig und ernst zugleich ist. Sie ist heilig, weil Gott selbst sie eingesetzt hat. Durch sie gab er dem Menschen Anteil an dem größten Werk der Schöpfung: der Weitergabe des menschlichen Lebens. So heiligte er die menschliche Liebe und ermöglichte es Mann und Frau, einander zu helfen, als Kinder Gottes zu leben, indem sie ein gemeinsames Leben unter seiner väterlichen Fürsorge führen.',
         'arch-1-p2': 'Weil Gott selbst ihr Urheber ist, ist die Ehe ihrem Wesen nach eine heilige Institution, die von denen, die sie eingehen, eine vollständige und vorbehaltlose Hingabe ihrer selbst verlangt.',
         'arch-1-p3': 'Diese Verbindung ist auch ernst, weil sie Sie auf Lebenszeit in einer Beziehung bindet, die so eng und innig ist, dass sie Ihre ganze Zukunft tiefgreifend beeinflussen wird. Diese Zukunft, mit ihren Hoffnungen und Enttäuschungen, ihren Erfolgen und Misserfolgen, ihren Freuden und Leiden, ist Ihren Augen verborgen. Sie wissen, dass diese Elemente in jedem Leben vorhanden sind und auch in Ihrem eigenen zu erwarten sind. Und so, ohne zu wissen, was vor Ihnen liegt, nehmen Sie einander in guten wie in schlechten Zeiten, in Reichtum und Armut, in Krankheit und Gesundheit, bis der Tod Sie scheidet.',
@@ -718,11 +732,65 @@ function setupGalleryScrollbar() {
 
     // Click on track to jump scroll position
     track.addEventListener('click', (e) => {
+        if (thumb.contains(e.target)) return; // ignore click at end of drag
         const rect      = track.getBoundingClientRect();
         const clickPos  = (e.clientX - rect.left) / rect.width;
         const maxScroll = galleryScroll.scrollWidth - galleryScroll.clientWidth;
         galleryScroll.scrollTo({ left: clickPos * maxScroll, behavior: 'smooth' });
     });
+
+    // Drag the thumb to scroll
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartScrollLeft = 0;
+
+    thumb.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartScrollLeft = galleryScroll.scrollLeft;
+        thumb.style.cursor = 'grabbing';
+        document.body.style.userSelect = 'none';
+        e.preventDefault();
+    });
+
+    thumb.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        dragStartX = e.touches[0].clientX;
+        dragStartScrollLeft = galleryScroll.scrollLeft;
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const maxScroll = galleryScroll.scrollWidth - galleryScroll.clientWidth;
+        const trackWidth = track.clientWidth;
+        const thumbWidth = parseFloat(thumb.style.width) || 40;
+        const scrollableTrack = trackWidth - thumbWidth;
+        const dx = e.clientX - dragStartX;
+        const scrollDelta = scrollableTrack > 0 ? (dx / scrollableTrack) * maxScroll : 0;
+        galleryScroll.scrollLeft = Math.max(0, Math.min(maxScroll, dragStartScrollLeft + scrollDelta));
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const maxScroll = galleryScroll.scrollWidth - galleryScroll.clientWidth;
+        const trackWidth = track.clientWidth;
+        const thumbWidth = parseFloat(thumb.style.width) || 40;
+        const scrollableTrack = trackWidth - thumbWidth;
+        const dx = e.touches[0].clientX - dragStartX;
+        const scrollDelta = scrollableTrack > 0 ? (dx / scrollableTrack) * maxScroll : 0;
+        galleryScroll.scrollLeft = Math.max(0, Math.min(maxScroll, dragStartScrollLeft + scrollDelta));
+    }, { passive: true });
+
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            thumb.style.cursor = 'grab';
+            document.body.style.userSelect = '';
+        }
+    });
+
+    document.addEventListener('touchend', () => { isDragging = false; });
 
     // Initial render + update on resize
     updateThumb();
@@ -848,6 +916,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
