@@ -440,7 +440,7 @@ const translations = {
         'arch-2-title':     'History of Mount Angel',
         'arch-3-title':     'Wedding Pictures',
 
-        'arch-1-source': 'Taken from the 1962 Collectio Rituum:',
+        'arch-1-source': 'Taken from the Rituale Romanum (1962):',
         'arch-1-p1': 'My dear friends: You are about to enter upon a union which is most sacred and most serious. It is most sacred, because it is established by God himself. By it, he gave to man a share in the greatest work of creation, the work of the continuation of the human race. And in this way he sanctified human love and enabled man and woman to help each other live as children of God, by sharing a common life under his fatherly care.',
         'arch-1-p2': 'Because God himself is thus its author, marriage is of its very nature a holy institution, requiring of those who enter into it a complete and unreserved giving of self.',
         'arch-1-p3': 'This union, then, is most serious, because it will bind you together for life in a relationship so close and so intimate, that it will profoundly influence your whole future. That future, with its hopes and disappointments, its successes and its failures, its pleasures and its pains, its joys and its sorrows, is hidden from your eyes. You know that these elements are mingled in every life, and are to be expected in your own. And so not knowing what is before you, you take each other for better or for worse, for richer or for poorer, in sickness and in health, until death.',
@@ -916,6 +916,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
