@@ -427,8 +427,8 @@ const translations = {
         'gallery-5-caption':    'Celebrating the 4th of July.',
         'gallery-6-caption':    'Our "Abiprom", celebrating Sjaak\'s Abitur and Claire\'s high school graduation.',
         'gallery-7-caption':    'Our families meeting up for the first time.',
-        'gallery-8-caption':    'Playing detective.',
-        'gallery-9-caption':    'Getting a private tour at the Streekmuseum in Eersel by Sjaak\'s grandfather.',
+        'gallery-8-caption':    '007 and Agent Scarn at your service.',
+        'gallery-9-caption':    'Getting a private tour at the "Streekmuseum" in Eersel by Sjaak\'s grandfather.',
         'gallery-10-caption':   'Visiting Krakow with Sjaak\'s father, Wil.',
         'gallery-11-caption':   'Visiting Seattle around Christmas time.',
         'gallery-12-caption':   'Reviewing coffee has been a routine during our relationship. This was in Seattle.',
@@ -503,27 +503,27 @@ const translations = {
         'story-p3':             'Door de jaren heen zijn we in contact gebleven via brieven, telefoontjes en bezoeken over duizenden kilometers. In juni vorig jaar vroeg ik Claire ten huwelijk in de abdij van Mount Angel met een paar houten klompen (en een ring natuurlijk). We zijn dankbaar voor de reis die onze relatie heeft afgelegd en kijken vol enthousiasme uit naar onze toekomst samen.',
 
         'moments-heading':      'Momenten door de Jaren',
-        'gallery-1-caption':    'Ons eerste date in Keulen.',
+        'gallery-1-caption':    'Onze eerste date in Keulen.',
         'gallery-2-caption':    'Sjaaks allereerste bezoek aan de VS.',
         'gallery-3-caption':    'Een rit op de historische kabeltrams van San Francisco.',
         'gallery-4-caption':    'Genieten van het strand in het zuiden van Oregon.',
-        'gallery-5-caption':    'De viering van 4 juli.',
+        'gallery-5-caption':    'De viering van "4th of July".',
         'gallery-6-caption':    'Ons "Abiprom", ter viering van Sjaaks Abitur en Claire\'s eindexamen.',
         'gallery-7-caption':    'Onze families ontmoeten elkaar voor het eerst.',
-        'gallery-8-caption':    'Detectives spelen.',
-        'gallery-9-caption':    'Een privérondleiding in het Streekmuseum in Eersel door Sjaaks grootvader.',
+        'gallery-8-caption':    '007 en Agent Scarn staan tot uw dienst.',
+        'gallery-9-caption':    'Een privérondleiding in het Streekmuseum in Eersel door Sjaaks opa.',
         'gallery-10-caption':   'Krakau bezoeken met Sjaaks vader, Wil.',
         'gallery-11-caption':   'Seattle bezoeken rond Kerstmis.',
-        'gallery-12-caption':   'Koffie recenseren is een vast ritueel in onze relatie. Dit was in Seattle.',
+        'gallery-12-caption':   'Het beoordelen van koffie is een routine geworden in onze relatie. Dit was in Seattle.',
         'gallery-13-caption':   'Wandelen bij Silver Falls.',
         'gallery-14-caption':   'Sjaak vraagt Claire ten huwelijk en overhandigt haar zijn handgesneden houten klompen.',
         'gallery-15-caption':   'Verlovingsfotoshoot.',
 
-        'arch-1-title':     'Vermaning voor het Huwelijk',
+        'arch-1-title':     'Toespraak voor het Huwelijk',
         'arch-2-title':     'Geschiedenis van Mount Angel',
         'arch-3-title':     'Huwelijksfoto\'s',
 
-        'arch-1-source': 'Overgenomen en vertaald uit de Collectio Rituum van 1962:',
+        'arch-1-source': 'Overgenomen en vertaald uit de Rituale Romanum (1962):',
         'arch-1-p1': 'Dierbare vrienden: U staat op het punt een verbintenis aan te gaan die heilig en ernstig is. Zij is heilig, omdat God zelf haar heeft ingesteld. Door haar gaf Hij de mens een aandeel in het grootste werk van de schepping: het voortbrengen van het menselijk geslacht. En zo heiligde Hij de menselijke liefde en stelde man en vrouw in staat elkaar te helpen als kinderen van God te leven, door een gemeenschappelijk leven te leiden onder zijn vaderlijke zorg.',
         'arch-1-p2': 'Omdat God zelf de auteur is, is het huwelijk van nature een heilige instelling, die van hen die het aangaan een volledige en onvoorwaardelijke overgave van zichzelf vereist.',
         'arch-1-p3': 'Deze verbintenis is ook ernstig, omdat zij u voor het leven bindt in een relatie die zo nauw en intiem is, dat zij uw gehele toekomst diepgaand zal beïnvloeden. Die toekomst, met haar hoop en teleurstellingen, haar successen en mislukkingen, haar vreugden en smarten, is voor uw ogen verborgen. U weet dat deze elementen in elk leven aanwezig zijn en ook in het uwe te verwachten zijn. En zo, niet wetend wat u te wachten staat, neemt u elkaar in voor- en tegenspoed, in rijkdom en armoede, in ziekte en gezondheid, totdat de dood u scheidt.',
@@ -590,11 +590,11 @@ const translations = {
         'gallery-2-caption':    'Sjaaks erstes Mal in den USA.',
         'gallery-3-caption':    'Eine Fahrt mit den historischen Seilbahnen von San Francisco.',
         'gallery-4-caption':    'Am Strand im Süden Oregons.',
-        'gallery-5-caption':    'Feier zum 4. Juli.',
+        'gallery-5-caption':    'Feier zum "4th of July."',
         'gallery-6-caption':    'Unser "Abiprom" – zur Feier von Sjaaks Abitur und Claires High-School-Abschluss.',
         'gallery-7-caption':    'Unsere Familien treffen sich zum ersten Mal.',
-        'gallery-8-caption':    'Detektive spielen.',
-        'gallery-9-caption':    'Eine private Führung im Streekmuseum in Eersel durch Sjaaks Großvater.',
+        'gallery-8-caption':    '007 und Agent Scarn stehen Ihnen zur Verfügung.',
+        'gallery-9-caption':    'Eine private Führung im "Streekmuseum" in Eersel durch Sjaaks Großvater.',
         'gallery-10-caption':   'Krakau besuchen mit Sjaaks Vater, Wil.',
         'gallery-11-caption':   'Seattle zur Weihnachtszeit.',
         'gallery-12-caption':   'Kaffee zu bewerten ist eine feste Tradition in unserer Beziehung. Dies war in Seattle.',
@@ -602,11 +602,11 @@ const translations = {
         'gallery-14-caption':   'Sjaak macht Claire einen Heiratsantrag und überreicht ihr seine handgeschnitzten Holzschuhe.',
         'gallery-15-caption':   'Verlobungsfotoshooting.',
 
-        'arch-1-title':     'Ermahnung vor der Ehe',
+        'arch-1-title':     'Ansprache vor der Ehe',
         'arch-2-title':     'Geschichte von Mount Angel',
         'arch-3-title':     'Hochzeitsfotos',
 
-        'arch-1-source': 'Entnommen und übersetzt aus der Collectio Rituum von 1962:',
+        'arch-1-source': 'Entnommen und übersetzt aus der Rituale Romanum von 1962:',
         'arch-1-p1': 'Liebe Freunde: Sie stehen im Begriff, eine Verbindung einzugehen, die heilig und ernst zugleich ist. Sie ist heilig, weil Gott selbst sie eingesetzt hat. Durch sie gab er dem Menschen Anteil an dem größten Werk der Schöpfung: der Weitergabe des menschlichen Lebens. So heiligte er die menschliche Liebe und ermöglichte es Mann und Frau, einander zu helfen, als Kinder Gottes zu leben, indem sie ein gemeinsames Leben unter seiner väterlichen Fürsorge führen.',
         'arch-1-p2': 'Weil Gott selbst ihr Urheber ist, ist die Ehe ihrem Wesen nach eine heilige Institution, die von denen, die sie eingehen, eine vollständige und vorbehaltlose Hingabe ihrer selbst verlangt.',
         'arch-1-p3': 'Diese Verbindung ist auch ernst, weil sie Sie auf Lebenszeit in einer Beziehung bindet, die so eng und innig ist, dass sie Ihre ganze Zukunft tiefgreifend beeinflussen wird. Diese Zukunft, mit ihren Hoffnungen und Enttäuschungen, ihren Erfolgen und Misserfolgen, ihren Freuden und Leiden, ist Ihren Augen verborgen. Sie wissen, dass diese Elemente in jedem Leben vorhanden sind und auch in Ihrem eigenen zu erwarten sind. Und so, ohne zu wissen, was vor Ihnen liegt, nehmen Sie einander in guten wie in schlechten Zeiten, in Reichtum und Armut, in Krankheit und Gesundheit, bis der Tod Sie scheidet.',
@@ -916,6 +916,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
