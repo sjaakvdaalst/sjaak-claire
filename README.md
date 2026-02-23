@@ -1,2 +1,2 @@
-# sjaak-claire-wedding
-Our wedding website
+# sjaak-claire
+Wedding website
