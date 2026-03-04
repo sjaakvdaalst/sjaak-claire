@@ -458,7 +458,7 @@ const translations = {
         'mass-note':            'Please arrive 15 minutes early, silence your cellphones, and (please!) no photos.',
 
         'reception-heading':    'Reception',
-        'reception-menu-link':  'Link to menu.',
+        'reception-menu-link':  'Link to website.',
 
         'faq-heading':          'Commonly Asked Questions',
         'faq-q1':               'Is there a dress code?',
@@ -541,7 +541,7 @@ const translations = {
         'mass-note':            'Gelieve 15 minuten van tevoren aanwezig te zijn, uw mobiele telefoons uit te zetten en (alstublieft!) geen foto\'s te maken.',
 
         'reception-heading':    'Receptie',
-        'reception-menu-link':  'Link naar het menu.',
+        'reception-menu-link':  'Link naar de website.',
 
         'faq-heading':          'Veelgestelde Vragen',
         'faq-q1':               'Is er een dresscode?',
@@ -624,7 +624,7 @@ const translations = {
         'mass-note':            'Bitte kommen Sie 15 Minuten früher, schalten Sie Ihre Handys stumm und (bitte!) machen Sie keine Fotos.',
 
         'reception-heading':    'Empfang',
-        'reception-menu-link':  'Link zur Speisekarte.',
+        'reception-menu-link':  'Link zur Internetseite.',
 
         'faq-heading':          'Häufig gestellte Fragen',
         'faq-q1':               'Gibt es einen Dresscode?',
@@ -916,6 +916,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
