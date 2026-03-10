@@ -464,7 +464,7 @@ const translations = {
         'faq-q1':               'Is there a dress code?',
         'faq-a1':               'In general, formal attire is appreciated. For the Church, please dress modestly (e.g., covered shoulders).',
         'faq-q2':               'What is parking like?',
-        'faq-a2':               'At St. Mary, there is a parking lot next to the church. At Sorella, there is street parking available.',
+        'faq-a2':               'At St. Mary, there is a parking lot next to the church. At the reception, there is street parking available.',
         'faq-q3':               'Where should we stay?',
         'faq-a3':               'As there are not many options in the Mt Angel/Silverton area, Salem has some reasonable places to stay.',
 
@@ -547,7 +547,7 @@ const translations = {
         'faq-q1':               'Is er een dresscode?',
         'faq-a1':               'Voor de kerk wordt u verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
         'faq-q2':               'Hoe zit het met parkeren?',
-        'faq-a2':               'Bij St. Mary is er een parkeerplaats naast de kerk. Bij Sorella kun je langs de weg parkeren.',
+        'faq-a2':               'Bij St. Mary is er een parkeerplaats naast de kerk. Bij de receptie kun je langs de weg parkeren.',
         'faq-q3':               'Waar kunnen we verblijven?',
         'faq-a3':               'Er zijn niet veel opties in het Mt Angel/Silverton-gebied, maar Salem heeft enkele redelijke mogelijkheden.',
 
@@ -630,7 +630,7 @@ const translations = {
         'faq-q1':               'Gibt es einen Dresscode?',
         'faq-a1':               'Im Allgemeinen wird formelle Kleidung geschätzt. Für den Gottesdienst bitten wir Sie, sich dezent zu kleiden (z. B. Schultern bedeckt).',
         'faq-q2':               'Wie sieht es mit Parkmöglichkeiten aus?',
-        'faq-a2':               'Bei St. Mary gibt es einen Parkplatz neben der Kirche. Bei Sorella kann man an der Straße parken.',
+        'faq-a2':               'Bei St. Mary gibt es einen Parkplatz neben der Kirche. Beim Hochzeitsempfang kann man an der Straße parken.',
         'faq-q3':               'Wo können wir übernachten?',
         'faq-a3':               'Da es in der Gegend um Mt Angel/Silverton wenige Möglichkeiten gibt, bietet Salem einige solide Optionen.',
 
@@ -916,6 +916,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Wedding website initialized successfully!');
+
 
 
 
