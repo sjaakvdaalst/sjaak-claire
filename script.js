@@ -113,13 +113,21 @@ window.addEventListener('load', () => {
 
 let lastScrollY = window.scrollY;
 let rotation    = 0;
+let rafPending  = false;
 const logoImage = document.querySelector('.logo-image');
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
     rotation += (currentScrollY - lastScrollY) * 0.15;
-    if (logoImage) logoImage.style.transform = `rotate(${rotation}deg)`;
     lastScrollY = currentScrollY;
+
+    if (!rafPending && logoImage) {
+        rafPending = true;
+        requestAnimationFrame(() => {
+            logoImage.style.transform = `rotate(${rotation}deg)`;
+            rafPending = false;
+        });
+    }
 }, { passive: true });
 
 // ==========================================
