@@ -486,7 +486,7 @@ const translations = {
         'rsvp-submit':          'Send RSVP',
         'rsvp-alert':           'Thank you for your RSVP! We look forward to celebrating with you.',
 
-        'footer':               '© 2026 Claire & Sjaak. All rights reserved.',
+        'footer':               'Claire & Sjaak · July 25, 2026',
     },
 
     nl: {
