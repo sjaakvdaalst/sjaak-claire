@@ -107,9 +107,6 @@ section {
 
 /* ==========================================
    SCROLL ANIMATION SYSTEM
-   Elements start hidden; JS adds/removes
-   .sa-visible every time they enter/leave
-   viewport — fully bidirectional.
    ========================================== */
 
 /* Fade-up: default state */
@@ -476,10 +473,7 @@ section {
     background-color: var(--dark-gray-azure);
 }
 
-/*
- * Background is an inner div (not ::before) so JS can
- * set transition:none on leave without triggering a zoom-in.
- */
+
 .intermission-bg {
     position: absolute;
     inset: 0;
@@ -816,12 +810,10 @@ section {
 
 /* ==========================================
    FAQ SECTION
-   5. Pattern strip at BOTTOM; 30s; 10vh; spacing above
    ========================================== */
 
 .faq {
     background: var(--dark-red);
-    /* 5. Bottom padding accommodates the pattern strip height + gap */
     padding: 5rem 2rem 8rem;
     display: flex;
     flex-direction: column;
@@ -830,13 +822,12 @@ section {
     position: relative;
 }
 
-/* 5. Pattern strip anchored to bottom */
 .faq-pattern-strip {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 10vh;          /* 5. Reduced from 12vh */
+    height: 10vh;
     max-height: 100px;
     min-height: 50px;
     overflow: hidden;
@@ -846,7 +837,7 @@ section {
 .faq-pattern-content {
     display: flex;
     height: 100%;
-    animation: slidePattern 30s linear infinite; /* 5. Slowed to 30s */
+    animation: slidePattern 30s linear infinite;
 }
 
 .faq-pattern-content img {
@@ -879,7 +870,6 @@ section {
 .faq-container {
     max-width: 800px;
     width: 100%;
-    /* 5. Gap between last FAQ item and the pattern strip below */
     margin-bottom: 2.5rem;
 }
 
@@ -1397,7 +1387,6 @@ body.overlay-open {
     .hero-name { font-size: 28px; }
     .hero-ampersand { font-size: 30px; }
 
-    /* 2. Welcome restores full height on mobile */
     .welcome { min-height: 100vh; }
 
     .welcome-heading { font-size: 38px; }

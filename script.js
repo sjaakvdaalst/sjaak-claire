@@ -136,7 +136,7 @@ window.addEventListener('scroll', () => {
 
 const storyVideo = document.querySelector('.story-video');
 if (storyVideo) {
-    // Safari sometimes ignores the HTML `muted` attribute — set it in JS too
+    // Safari sometimes ignores the HTML `muted` attribute
     storyVideo.muted = true;
 
     // Attempt to play; catch rejection (Safari/iOS autoplay policy)
@@ -158,10 +158,8 @@ if (storyVideo) {
 
     // On Safari, video data may not be ready yet — wait for canplay if needed
     if (storyVideo.readyState >= 3) {
-        // Already have enough data — observer will call tryPlay
     } else {
         storyVideo.addEventListener('canplay', () => {
-            // Observer may have already triggered; this is a fallback
         }, { once: true });
     }
 
@@ -184,19 +182,15 @@ if (storyVideo) {
 const heroBackground = document.querySelector('.hero-background');
 window.addEventListener('scroll', () => {
     if (heroBackground) {
-        // Parallax only; zoom animation is handled by CSS @keyframes
         heroBackground.style.transform = `translateY(${window.pageYOffset * 0.4}px) scale(1)`;
     }
 }, { passive: true });
 
 // ==========================================
 // SCROLL ANIMATION SYSTEM
-// Bidirectional: adds .sa-visible on enter,
-// removes .sa-visible on leave — every time.
 // ==========================================
 
 function setupScrollAnimations() {
-    // Observer factory: threshold + optional rootMargin
     function makeObserver(threshold = 0.2, rootMargin = '0px') {
         return new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -235,7 +229,7 @@ function setupScrollAnimations() {
     watch('.welcome .cross-symbol');
 
     // ------------------------------------------
-    // OUR STORY section — staggered paragraphs
+    // OUR STORY section
     // ------------------------------------------
     watch('.story-heading');
 
@@ -253,7 +247,7 @@ function setupScrollAnimations() {
     // MOMENTS section
     // ------------------------------------------
     watch('.moments-heading');
-    watchLeft('.gallery-scroll');     // slides in from left
+    watchLeft('.gallery-scroll');
 
     // ------------------------------------------
     // EVENT sections (Nuptial Mass + Reception)
@@ -262,7 +256,7 @@ function setupScrollAnimations() {
     watch('.event-map', '', 'sa-delay-2');
 
     // ------------------------------------------
-    // FAQ section (pattern strip is static; no SA)
+    // FAQ section
     // ------------------------------------------
     watch('.faq-heading');
     watch('.faq-icon',      '', 'sa-delay-1');
@@ -271,7 +265,7 @@ function setupScrollAnimations() {
     // ------------------------------------------
     // REGISTRY section
     // ------------------------------------------
-    watchLeft('.registry-image');      // slides in from left
+    watchLeft('.registry-image');
     watch('.registry-text');
 
     // ------------------------------------------
@@ -303,7 +297,7 @@ function setupIntermission() {
     const quote        = document.getElementById('intermission-quote');
     if (!intermission || !quote || !bg) return;
 
-    // --- Build letter spans, set initial (hidden, offset) state ---
+    // uild letter spans, set initial (hidden, offset) state
     const text = quote.textContent;
     quote.textContent = '';
     quote.style.opacity = '1';
@@ -333,7 +327,7 @@ function setupIntermission() {
 
     resetLetters();
 
-    // --- Add gold divider ---
+    // Add gold divider
     const divider = document.createElement('span');
     divider.className      = 'quote-divider';
     divider.style.opacity  = '0';
@@ -343,7 +337,7 @@ function setupIntermission() {
     let enterTimer = null;
     let leaveTimer = null;
 
-    // --- ENTER: clarify in, center-out, over ~2s, with 0.5s initial delay ---
+    // ENTER: clarify in, center-out, over ~2s, with 0.5s initial delay
     function clarifyIn() {
         clearTimeout(enterTimer);
         clearTimeout(leaveTimer);
@@ -373,7 +367,7 @@ function setupIntermission() {
         }, 500); // 0.5s initial delay
     }
 
-    // --- LEAVE: simple fade out; background snaps back instantly (no zoom-in) ---
+    // LEAVE: simple fade out; background snaps back instantly (no zoom-in)
     function fadeOut() {
         clearTimeout(enterTimer);
         clearTimeout(leaveTimer);
@@ -395,7 +389,7 @@ function setupIntermission() {
         }, 380);
     }
 
-    // --- IntersectionObserver ---
+    // IntersectionObserver
     new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
