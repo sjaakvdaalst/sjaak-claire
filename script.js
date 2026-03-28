@@ -496,8 +496,8 @@ const translations = {
         'nav-rsvp':             'RSVP',
 
         'welcome-heading':      'Welkom!',
-        'welcome-p1':           'Claire en Sjaak nodigen u met vreugde uit om deel te nemen aan de viering van hun verbintenis in het Sacrament van het Huwelijk.',
-        'welcome-p2':           'Hieronder vindt u alle details over de ceremonie, de receptie en meer. Wij zijn dankbaar voor uw aanwezigheid terwijl wij samen aan dit grote, levenslange avontuur beginnen.',
+        'welcome-p1':           'Claire en Sjaak nodigen je met vreugde uit om deel te nemen aan de viering van hun bruiloft.',
+        'welcome-p2':           'Hieronder vind je alle details over de ceremonie, de receptie en meer. Wij zijn dankbaar voor jouw aanwezigheid op deze bijzonder dag als wij samen aan dit grote, levenslange avontuur beginnen.',
 
         'story-heading':        'Een Kijkje in Ons Verhaal',
         'story-p1':             'Claire en ik ontmoetten elkaar voor het eerst in 2021 toen ze een jaar in het buitenland studeerde aan mijn middelbare school in Eschweiler, Duitsland. We kwamen bij elkaar in de klas te zitten en werden al snel goede vrienden.',
@@ -534,30 +534,30 @@ const translations = {
         'arch-1-p6': 'God zal ook niet tekortschieten in uw noden: Hij geeft u de levenslange steun van zijn genade.',
 
         'arch-2-p1': 'Mount Angel is een klein dorpje in de Willamette Valley in Oregon, gesticht in 1882 door benedictijnse monniken die emigreerden vanuit de abdij van Engelberg in Zwitserland (wat de Engelse naam verklaart). Gefascineerd door een heuvel die hen deed denken aan hun alpine thuisland en om de grote toestroom van Beierse immigranten in dit gebied te huisvesten, stichtten ze wat later de Abdij van Mount Angel zou worden: een plaats van gebed, wetenschap en gastvrijheid die al meer dan een eeuw de spil van de gemeenschap vormt.',
-        'arch-2-p2': 'Het dorpje zelf heeft een uitgesproken Duits en Zwitsers katholiek karakter, gevormd door de generaties immigranten die zich naast de monniken vestigden. Het jaarlijkse Oktoberfest, dat elk jaar in september wordt gehouden, trekt honderdduizenden bezoekers en viert dit erfgoed met muziek, eten en saamhorigheid. De bibliotheek van de abdij, een meesterwerk ontworpen door de Finse architect Alvar Aalto, geldt als een van de meest gevierde voorbeelden van moderne sacrale architectuur ter wereld. Toen de oorspronkelijke bibliotheek afbrandde, werd de inventaris van een tweedehands boekhandel in Aken, vlakbij Sjaaks tehuis, gekocht. Dit vormde de basis van de huidige bibliotheekcollectie.',
+        'arch-2-p2': 'Het dorpje zelf heeft een Zuid-Duits karakter, gevormd door de generaties immigranten die zich naast de monniken vestigden. Het jaarlijkse Oktoberfest, dat elk jaar in september wordt gehouden, trekt honderdduizenden bezoekers en viert dit erfgoed met muziek, eten en saamhorigheid. De bibliotheek van de abdij, een meesterwerk ontworpen door de Finse architect Alvar Aalto, geldt als een van de meest gevierde voorbeelden van moderne sacrale architectuur ter wereld. Toen de oorspronkelijke bibliotheek afbrandde, werd de inventaris van een tweedehands boekhandel in Aken, vlakbij Sjaaks huis, gekocht. Dit vormde de basis van de huidige bibliotheekcollectie.',
         'arch-2-p3': 'St. Mary\'s is een neogotische kerk in het hart van het dorp en kenmerkt zich door een interessante mix van het Germaanse erfgoed van de regio en Amerikaanse motieven.',
 
         'arch-3-p1': 'Oeps — het lijkt erop dat deze pagina nog leeg is! Kom na de bruiloft terug voor foto\'s van onze grote dag.',
 
         'mass-heading':         'Huwelijksmis',
-        'mass-note':            'Gelieve 15 minuten van tevoren aanwezig te zijn, uw mobiele telefoons uit te zetten en (alstublieft!) geen foto\'s te maken.',
+        'mass-note':            'Gelieve 15 minuten van tevoren aanwezig te zijn, je mobiele telefoons uit te zetten en (alsjeblieft!) geen foto\'s te maken.',
 
         'reception-heading':    'Receptie',
         'reception-menu-link':  'Link naar de website.',
 
         'faq-heading':          'Veelgestelde Vragen',
         'faq-q1':               'Is er een dresscode?',
-        'faq-a1':               'Voor de kerk wordt u verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
+        'faq-a1':               'Voor de kerk wordt je verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
         'faq-q2':               'Hoe zit het met parkeren?',
-        'faq-a2':               'Bij St. Mary is er een parkeerplaats naast de kerk. Bij de receptie kun je langs de weg parkeren.',
+        'faq-a2':               'Zowel bij St. Mary als bij de plaats van de receptie zijn er parkeermogelijkheden.',
         'faq-q3':               'Waar kunnen we verblijven?',
         'faq-a3':               'Er zijn niet veel opties in het Mt Angel/Silverton-gebied, maar Salem heeft enkele redelijke mogelijkheden.',
 
-        'registry-heading':     'Uw aanwezigheid is werkelijk het mooiste cadeau dat wij ons kunnen wensen.',
-        'registry-message':     'Maar als u toch iets wilt geven, hebben wij een kleine cadeaulijst samengesteld.\nKlik op onderstaande link om de cadeaulijst te bezoeken.',
+        'registry-heading':     'Jouw aanwezigheid is het mooiste cadeau dat wij ons kunnen wensen.',
+        'registry-message':     'Maar als je toch iets wilt geven, hebben wij een kleine cadeaulijst samengesteld.\nKlik op onderstaande link om de cadeaulijst te bezoeken.',
         'registry-link':        'Bezoek onze cadeaulijst',
 
-        'rsvp-heading':         'Meld u aan vóór 1 juni 2026',
+        'rsvp-heading':         'Meld je aan vóór 1 juni 2026',
         'rsvp-label-name':      'Volledige naam',
         'rsvp-label-email':     'E-mailadres',
         'rsvp-label-attending': 'Bent u aanwezig?',
@@ -617,7 +617,7 @@ const translations = {
         'arch-1-p6': 'Gott wird Ihren Bedürfnissen nicht fehlen; er schenkt Ihnen die lebenslange Unterstützung seiner Gnaden.',
 
         'arch-2-p1': 'Mount Angel ist ein kleines Dorf im Willamette Valley in Oregon, das 1882 von Benediktinermönchen gegründet wurde, die aus der Abtei Engelberg in der Schweiz emigriert waren (daher der englische Name). Fasziniert von einem Hügel, der sie an ihre alpine Heimat erinnerte, und um die zahlreichen bayerischen Einwanderer in der Gegend unterzubringen, gründeten sie die spätere Abtei Mount Angel: ein Ort des Gebets, der Wissenschaft und der Gastfreundschaft, der die Gemeinde seit über einem Jahrhundert prägt.',
-        'arch-2-p2': 'Das Dorf selbst ist stark deutsch-schweizerisch-katholisch geprägt, geformt von den Generationen von Einwanderern, die sich neben den Mönchen niederließen. Das alljährliche Oktoberfest im September zieht Hunderttausende Besucher an und feiert dieses Erbe mit Musik, Essen und Geselligkeit. Die Abteibibliothek, ein Meisterwerk des finnischen Architekten Alvar Aalto, gilt als eines der berühmtesten Beispiele moderner sakraler Architektur weltweit. Nach dem Brand der ursprünglichen Bibliothek wurden die Bestände eines Antiquariats in Aachen, unweit von Sjaaks Wohnort, erworben. Dies bildete den Grundstock der heutigen Bibliothekssammlung.',
+        'arch-2-p2': 'Das Dorf selbst ist stark süd-deutsch geprägt, geformt von den Generationen von Einwanderern, die sich neben den Mönchen niederließen. Das alljährliche Oktoberfest im September zieht Hunderttausende Besucher an und feiert dieses Erbe mit Musik, Essen und Geselligkeit. Die Abteibibliothek, ein Meisterwerk des finnischen Architekten Alvar Aalto, gilt als eines der berühmtesten Beispiele moderner sakraler Architektur weltweit. Nach dem Brand der ursprünglichen Bibliothek wurden die Bestände eines Antiquariats in Aachen, unweit von Sjaaks Wohnort, erworben. Dies bildete den Grundstock der heutigen Bibliothekssammlung.',
         'arch-2-p3': 'St. Mary\'s ist eine neugotische Kirche im Herzen des Dorfes und zeichnet sich durch eine interessante Mischung aus dem germanischen Erbe der Region und amerikanischen Motiven aus.',
 
         'arch-3-p1': 'Hoppla — diese Seite ist noch leer! Schauen Sie nach der Hochzeit wieder vorbei, um Fotos von unserem großen Tag zu sehen.',
@@ -632,7 +632,7 @@ const translations = {
         'faq-q1':               'Gibt es einen Dresscode?',
         'faq-a1':               'Im Allgemeinen wird formelle Kleidung geschätzt. Für den Gottesdienst bitten wir Sie, sich dezent zu kleiden (z. B. Schultern bedeckt).',
         'faq-q2':               'Wie sieht es mit Parkmöglichkeiten aus?',
-        'faq-a2':               'Bei St. Mary gibt es einen Parkplatz neben der Kirche. Beim Hochzeitsempfang kann man an der Straße parken.',
+        'faq-a2':               'Sowohl bei St. Marien als auch am Veranstaltungsort für den Empfang stehen private Parkplätze zur Verfügung.',
         'faq-q3':               'Wo können wir übernachten?',
         'faq-a3':               'Da es in der Gegend um Mt Angel/Silverton wenige Möglichkeiten gibt, bietet Salem einige solide Optionen.',
 
