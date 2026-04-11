@@ -451,8 +451,8 @@ const translations = {
         'arch-1-p6': 'Nor will God be wanting to your needs, he will pledge you the life-long support of his graces.',
 
         'arch-2-p1': 'Mount Angel is a small town in the Willamette Valley of Oregon, founded in 1882 by Benedictine monks who emigrated from the Abbey of Engelberg in Switzerland (which explains the English name). Captivated by a hill that reminded them of their alpine homeland and to accommodate the substantial amount of Bavarian immigrants in this area, they established what would become the Abbey of Mount Angel: a place of prayer, scholarship, and hospitality that has anchored the community for over a century.',
-        'arch-2-p2': 'The town itself carries a distinctly German and Swiss Catholic character, shaped by the generations of immigrants who settled alongside the monks. Its annual Oktoberfest, held each September, draws hundreds of thousands of visitors and celebrates this heritage with music, food, and fellowship. The Abbey\'s library, a masterwork designed by Finnish architect Alvar Aalto, stands as one of the most celebrated examples of modern sacred architecture in the world. When the original library burned down, the contents of a used bookstore were purchased in Aachen, close to Sjaak\'s home. This formed the foundation of the current library collection.',
-        'arch-2-p3': 'St. Mary\'s is a neogothic church in the heart of the town, and features an interesting blend between the town\'s Germanic heritage and American motifs.',
+        'arch-2-p2': 'Steeped in German and Swiss Catholic tradition, Mount Angel is known for its annual Oktoberfest, which draws thousands of people for music, food, fellowship, and obviously beer. The Abbey is home to a significant library designed by Finnish architect Alvar Aalto, celebrated for its masterful use of light. Following a fire in 1926, the monks established the current library\'s foundation by purchasing the entire collection of a bookstore in Aachen, close to Sjaak\'s home.',
+        'arch-2-p3': 'St. Mary\'s is a church in the heart of the town, and features an interesting blend between neogothic architecture and simultaneously American motifs.',
 
         'arch-3-p1': 'Oops — looks like this page is still empty! Check back after the wedding for photos from our big day.',
 
@@ -466,7 +466,7 @@ const translations = {
         'faq-q1':               'Is there a dress code?',
         'faq-a1':               'In general, formal attire is appreciated. For the Church, please dress modestly (e.g., covered shoulders).',
         'faq-q2':               'What is parking like?',
-        'faq-a2':               'At St. Mary, there is a parking lot next to the church. At the reception, there is street parking available.',
+        'faq-a2':               'Both the ceremony and reception locations offer dedicated private parking areas free of charge for our guests.',
         'faq-q3':               'Where should we stay?',
         'faq-a3':               'As there are not many options in the Mt Angel/Silverton area, Salem has some reasonable places to stay.',
 
@@ -535,7 +535,7 @@ const translations = {
 
         'arch-2-p1': 'Mount Angel is een klein dorpje in de Willamette Valley in Oregon, gesticht in 1882 door benedictijnse monniken die emigreerden vanuit de abdij van Engelberg in Zwitserland (wat de Engelse naam verklaart). Gefascineerd door een heuvel die hen deed denken aan hun alpine thuisland en om de grote toestroom van Beierse immigranten in dit gebied te huisvesten, stichtten ze wat later de Abdij van Mount Angel zou worden: een plaats van gebed, wetenschap en gastvrijheid die al meer dan een eeuw de spil van de gemeenschap vormt.',
         'arch-2-p2': 'Het dorpje zelf heeft een Zuid-Duits karakter, gevormd door de generaties immigranten die zich naast de monniken vestigden. Het jaarlijkse Oktoberfest, dat elk jaar in september wordt gehouden, trekt honderdduizenden bezoekers en viert dit erfgoed met muziek, eten en saamhorigheid. De bibliotheek van de abdij, een meesterwerk ontworpen door de Finse architect Alvar Aalto, geldt als een van de meest gevierde voorbeelden van moderne sacrale architectuur ter wereld. Toen de oorspronkelijke bibliotheek afbrandde, werd de inventaris van een tweedehands boekhandel in Aken, vlakbij Sjaaks huis, gekocht. Dit vormde de basis van de huidige bibliotheekcollectie.',
-        'arch-2-p3': 'St. Mary\'s is een neogotische kerk in het hart van het dorp en kenmerkt zich door een interessante mix van het Germaanse erfgoed van de regio en Amerikaanse motieven.',
+        'arch-2-p3': 'St. Mary\'s is een kerk in het hart van het dorp en kenmerkt zich door een interessante mix van neogotische architektur en tegelijkertijd Amerikaanse motieven.',
 
         'arch-3-p1': 'Oeps — het lijkt erop dat deze pagina nog leeg is! Kom na de bruiloft terug voor foto\'s van onze grote dag.',
 
@@ -549,7 +549,7 @@ const translations = {
         'faq-q1':               'Is er een dresscode?',
         'faq-a1':               'Voor de kerk wordt je verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
         'faq-q2':               'Hoe zit het met parkeren?',
-        'faq-a2':               'Zowel bij St. Mary als bij de plaats van de receptie zijn er parkeermogelijkheden.',
+        'faq-a2':               'Zowel bij de kerk als bij de locatie voor de receptie is er gratis privéparkeergelegenheid beschikbaar voor onze gasten.',
         'faq-q3':               'Waar kunnen we verblijven?',
         'faq-a3':               'Er zijn niet veel opties in het Mt Angel/Silverton-gebied, maar Salem heeft enkele redelijke mogelijkheden.',
 
@@ -618,7 +618,7 @@ const translations = {
 
         'arch-2-p1': 'Mount Angel ist ein kleines Dorf im Willamette Valley in Oregon, das 1882 von Benediktinermönchen gegründet wurde, die aus der Abtei Engelberg in der Schweiz emigriert waren (daher der englische Name). Fasziniert von einem Hügel, der sie an ihre alpine Heimat erinnerte, und um die zahlreichen bayerischen Einwanderer in der Gegend unterzubringen, gründeten sie die spätere Abtei Mount Angel: ein Ort des Gebets, der Wissenschaft und der Gastfreundschaft, der die Gemeinde seit über einem Jahrhundert prägt.',
         'arch-2-p2': 'Das Dorf selbst ist stark süd-deutsch geprägt, geformt von den Generationen von Einwanderern, die sich neben den Mönchen niederließen. Das alljährliche Oktoberfest im September zieht Hunderttausende Besucher an und feiert dieses Erbe mit Musik, Essen und Geselligkeit. Die Abteibibliothek, ein Meisterwerk des finnischen Architekten Alvar Aalto, gilt als eines der berühmtesten Beispiele moderner sakraler Architektur weltweit. Nach dem Brand der ursprünglichen Bibliothek wurden die Bestände eines Antiquariats in Aachen, unweit von Sjaaks Wohnort, erworben. Dies bildete den Grundstock der heutigen Bibliothekssammlung.',
-        'arch-2-p3': 'St. Mary\'s ist eine neugotische Kirche im Herzen des Dorfes und zeichnet sich durch eine interessante Mischung aus dem germanischen Erbe der Region und amerikanischen Motiven aus.',
+        'arch-2-p3': 'St. Mary\'s ist eine Kirche im Herzen des Dorfes und zeichnet sich durch eine interessante Mischung aus neogotischer Architektur und zugleich amerikanischen Motiven aus.',
 
         'arch-3-p1': 'Hoppla — diese Seite ist noch leer! Schauen Sie nach der Hochzeit wieder vorbei, um Fotos von unserem großen Tag zu sehen.',
 
@@ -632,7 +632,7 @@ const translations = {
         'faq-q1':               'Gibt es einen Dresscode?',
         'faq-a1':               'Im Allgemeinen wird formelle Kleidung geschätzt. Für den Gottesdienst bitten wir Sie, sich dezent zu kleiden (z. B. Schultern bedeckt).',
         'faq-q2':               'Wie sieht es mit Parkmöglichkeiten aus?',
-        'faq-a2':               'Sowohl bei St. Marien als auch am Veranstaltungsort für den Empfang stehen private Parkplätze zur Verfügung.',
+        'faq-a2':               'Sowohl am Ort der Trauung als auch am Ort der Feier stehen unseren Gästen kostenlose Privatparkplätze zur Verfügung.',
         'faq-q3':               'Wo können wir übernachten?',
         'faq-a3':               'Da es in der Gegend um Mt Angel/Silverton wenige Möglichkeiten gibt, bietet Salem einige solide Optionen.',
 
