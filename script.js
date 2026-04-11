@@ -535,7 +535,7 @@ const translations = {
 
         'arch-2-p1': 'Mount Angel is een klein dorpje in de Willamette Valley in Oregon, gesticht in 1882 door benedictijnse monniken die emigreerden vanuit de abdij van Engelberg in Zwitserland (wat de Engelse naam verklaart). Gefascineerd door een heuvel die hen deed denken aan hun alpine thuisland en om de grote toestroom van Beierse immigranten in dit gebied te huisvesten, stichtten ze wat later de Abdij van Mount Angel zou worden: een plaats van gebed, wetenschap en gastvrijheid die al meer dan een eeuw de spil van de gemeenschap vormt.',
         'arch-2-p2': 'Het dorpje zelf heeft een Zuid-Duits karakter, gevormd door de generaties immigranten die zich naast de monniken vestigden. Het jaarlijkse Oktoberfest, dat elk jaar in september wordt gehouden, trekt honderdduizenden bezoekers en viert dit erfgoed met muziek, eten en saamhorigheid. De bibliotheek van de abdij, een meesterwerk ontworpen door de Finse architect Alvar Aalto, geldt als een van de meest gevierde voorbeelden van moderne sacrale architectuur ter wereld. Toen de oorspronkelijke bibliotheek afbrandde, werd de inventaris van een tweedehands boekhandel in Aken, vlakbij Sjaaks huis, gekocht. Dit vormde de basis van de huidige bibliotheekcollectie.',
-        'arch-2-p3': 'St. Mary\'s is een kerk in het hart van het dorp en kenmerkt zich door een interessante mix van neogotische architektur en tegelijkertijd Amerikaanse motieven.',
+        'arch-2-p3': 'St. Mary\'s is een kerk in het hart van het dorp en kenmerkt zich door een interessante mix van neogotische architektuur en tegelijkertijd Amerikaanse motieven.',
 
         'arch-3-p1': 'Oeps — het lijkt erop dat deze pagina nog leeg is! Kom na de bruiloft terug voor foto\'s van onze grote dag.',
 
