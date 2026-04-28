@@ -482,60 +482,13 @@ section {
     background-size: cover;
     background-position: center;
     z-index: 0;
-    transform: scale(1.06);   /* slight zoom-in as default state */
-    /* transition is set/removed dynamically by JS */
+    /* Start at normal scale */
+    transform: scale(1); 
+    /* Smooth transition for the zoom effect */
+    transition: transform 2.5s ease-out; 
 }
 
-/*
- * 3. Quote sits at 70% from top:
- *    margin-top: 70vh pushes container top to 70% of viewport,
- *    then transform: translateY(-50%) centers it on that line.
- */
-.quote-container {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    max-width: 900px;
-    width: 100%;
-    padding: 2rem;
-    margin-top: 25vh;
-    transform: translateY(-50%);
-}
 
-.quote {
-    font-family: var(--font-playfair);
-    font-size: 50px;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--pastel-gray-yellow);
-    margin: 0;
-    text-align: center;
-    opacity: 0;
-}
-
-/* 3. Letters: no blur — only opacity + translateX (60px offset applied in JS) */
-.quote .letter {
-    display: inline-block;
-    opacity: 0;
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
-}
-
-/* 3. Decorative gold divider below quote */
-.quote-divider {
-    display: block;
-    width: 100px;
-    height: 1px;
-    background: var(--pastel-gray-yellow);
-    margin: 1.6rem auto 0;
-    opacity: 0;
-    transition: opacity 0.8s ease 0.4s;
-}
-
-.quote-divider.sa-visible {
-    opacity: 0.7;
-}
 
 /* ==========================================
    MOMENTS SECTION

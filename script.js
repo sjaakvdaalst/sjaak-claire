@@ -285,120 +285,31 @@ function setupScrollAnimations() {
 
 // ==========================================
 // INTERMISSION — IO-driven clarify animation
-// Enter: 0.5s delay → clarify letters center-out over ~2s
-//        background zooms out over 2.5s (low movement)
-// Leave: letters + divider fade out quickly
-//        background snaps back to scale(1.06) with no animation
 // ==========================================
 
 function setupIntermission() {
     const intermission = document.querySelector('.intermission');
     const bg           = document.querySelector('.intermission-bg');
-    const quote        = document.getElementById('intermission-quote');
-    if (!intermission || !quote || !bg) return;
+    
+    // We only need the section and the background now
+    if (!intermission || !bg) return;
 
-    // uild letter spans, set initial (hidden, offset) state
-    const text = quote.textContent;
-    quote.textContent = '';
-    quote.style.opacity = '1';
-
-    const letters = text.split('').map(char => {
-        const span = document.createElement('span');
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        span.className   = 'letter';
-        quote.appendChild(span);
-        return span;
-    });
-
-    const center = letters.length / 2;
-
-    // Position letters at their outward offset immediately (no transition)
-    function resetLetters() {
-        letters.forEach((letter, i) => {
-            const dist       = Math.abs(i - center);
-            const normalized = dist / (center || 1);
-            const direction  = i < center ? -1 : 1;
-            letter.style.transition = 'none';
-            letter.style.opacity    = '0';
-            letter.style.filter     = 'blur(8px)';
-            letter.style.transform  = `translateX(${60 * normalized * direction}px)`;
-        });
-    }
-
-    resetLetters();
-
-    // Add gold divider
-    const divider = document.createElement('span');
-    divider.className      = 'quote-divider';
-    divider.style.opacity  = '0';
-    divider.style.transition = 'none';
-    quote.parentNode.appendChild(divider);
-
-    let enterTimer = null;
-    let leaveTimer = null;
-
-    // ENTER: clarify in, center-out, over ~2s, with 0.5s initial delay
-    function clarifyIn() {
-        clearTimeout(enterTimer);
-        clearTimeout(leaveTimer);
-
-        // Background: enable transition and zoom out (low movement: 1.06→1)
-        bg.style.transition = 'transform 2.5s ease-out';
-        bg.style.transform  = 'scale(1)';
-
-        enterTimer = setTimeout(() => {
-            letters.forEach((letter, i) => {
-                const dist  = Math.abs(i - center);
-                // Each letter starts its 0.6s transition staggered from center
-                const delay = dist * 75; // ~75ms per step outward
-                setTimeout(() => {
-                    letter.style.transition = 'opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease';
-                    letter.style.opacity    = '1';
-                    letter.style.filter     = 'blur(0px)';
-                    letter.style.transform  = 'translateX(0)';
-                }, delay);
-            });
-
-            // Divider fades in shortly after the first letters appear
-            setTimeout(() => {
-                divider.style.transition = 'opacity 0.7s ease';
-                divider.style.opacity    = '0.7';
-            }, 350);
-        }, 500); // 0.5s initial delay
-    }
-
-    // LEAVE: simple fade out; background snaps back instantly (no zoom-in)
-    function fadeOut() {
-        clearTimeout(enterTimer);
-        clearTimeout(leaveTimer);
-
-        // Fade letters
-        letters.forEach(letter => {
-            letter.style.transition = 'opacity 0.35s ease';
-            letter.style.opacity    = '0';
-        });
-        divider.style.transition = 'opacity 0.35s ease';
-        divider.style.opacity    = '0';
-
-        // After fade, reset positions so next enter re-clarifies from scratch
-        leaveTimer = setTimeout(() => {
-            resetLetters();
-            // Snap bg back to zoomed-in state with NO transition
-            bg.style.transition = 'none';
-            bg.style.transform  = 'scale(1.06)';
-        }, 380);
-    }
-
-    // IntersectionObserver
-    new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                clarifyIn();
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Zoom in slightly when the user scrolls to this section
+                bg.style.transform = 'scale(1.1)';
             } else {
-                fadeOut();
+                // Zoom back out to original size when scrolling away
+                bg.style.transform = 'scale(1)';
             }
         });
-    }, { threshold: 0.15 }).observe(intermission);
+    }, { 
+        // Trigger the effect when 10% of the section is visible
+        threshold: 0.1 
+    });
+
+    observer.observe(intermission);
 }
 
 // ==========================================
@@ -417,9 +328,9 @@ const translations = {
         'welcome-p2':           'Below, you will find all details about the ceremony, reception, and more. We\'re grateful for your presence as we embark on this great lifelong adventure together.',
 
         'story-heading':        'A Peek Into Our Story',
-        'story-p1':             'Claire and I first met in 2021 when she studied abroad at my high school in Eschweiler, Germany. We ended up as classmates and seatmates, and we quickly became close friends.',
-        'story-p2':             'What started with joking around in the classroom soon grew into a genuine friendship. We spent weekends hiking, attending Mass together, and talking for hours over coffee.',
-        'story-p3':             'Over the years, we\'ve stayed connected through letters, phone calls, and visits across thousands of miles. In June last year, I proposed to Claire at the Abbey of Mount Angel with a pair of wooden clogs. We\'re grateful for the journey our relationship has taken and are excited for the future together.',
+        'story-p1':             'We first met in 2021 when Claire studied abroad at Sjaak\'s high school in Eschweiler, Germany. We ended up as classmates and seatmates, and we quickly became close friends.',
+        'story-p2':             'What started with joking around in the classroom soon grew into a special friendship. We spent weekends hiking, attending Mass together, and talking for hours over coffee.',
+        'story-p3':             'Over the years, we’ve stayed connected through letters, phone calls, and visits across thousands of miles. In June last year, Sjaak proposed to Claire at the Abbey of Mount Angel with a pair of wooden clogs. We’re grateful for the journey our relationship has taken and are excited for the future together.',
 
         'moments-heading':      'Moments Through the Years',
         'gallery-1-caption':    'Our first date in Cologne.',
@@ -464,11 +375,11 @@ const translations = {
 
         'faq-heading':          'Commonly Asked Questions',
         'faq-q1':               'Is there a dress code?',
-        'faq-a1':               'In general, formal attire is appreciated. For the Church, please dress modestly (e.g., covered shoulders).',
+        'faq-a1':               'In general, semi-formal or formal attire is appreciated. For the Church, please dress modestly (e.g., covered shoulders).',
         'faq-q2':               'What is parking like?',
-        'faq-a2':               'Both the ceremony and reception locations offer dedicated private parking areas free of charge for our guests.',
-        'faq-q3':               'Where should we stay?',
-        'faq-a3':               'As there are not many options in the Mt Angel/Silverton area, Salem has some reasonable places to stay.',
+        'faq-a2':               'Both the ceremony and reception locations offer dedicated private parking areas free of charge.',
+        'faq-q3':               'Can you accommodate food allergies or dietary requirements?',
+        'faq-a3':               'Yes. Please let us know any allergies or dietary requirements in your RSVP, and we will do our best to accommodate them.',
 
         'registry-heading':     'Your presence is truly the best gift we could ask for.',
         'registry-message':     'But if you feel called to give a little something, we\'ve put together a small registry.\nClick the link below to reach the gift registry.',
@@ -500,9 +411,9 @@ const translations = {
         'welcome-p2':           'Hieronder vind je alle details over de ceremonie, de receptie en meer. Wij zijn dankbaar voor jouw aanwezigheid op deze bijzonder dag als wij samen aan dit grote, levenslange avontuur beginnen.',
 
         'story-heading':        'Een Kijkje in Ons Verhaal',
-        'story-p1':             'Claire en ik ontmoetten elkaar voor het eerst in 2021 toen ze een jaar in het buitenland studeerde aan mijn middelbare school in Eschweiler, Duitsland. We kwamen bij elkaar in de klas te zitten en werden al snel goede vrienden.',
-        'story-p2':             'Wat begon met grapjes in de klas groeide snel uit tot een diepe vriendschap. We brachten veel tijd met elkaar door in de weekenden met wandelen, samen naar de mis gaan en urenlang kletsen onder het genot van een kop koffie (of twee…).',
-        'story-p3':             'Door de jaren heen zijn we in contact gebleven via brieven, telefoontjes en bezoeken over duizenden kilometers. In juni vorig jaar vroeg ik Claire ten huwelijk in de abdij van Mount Angel met een paar houten klompen (en een ring natuurlijk). We zijn dankbaar voor de reis die onze relatie heeft afgelegd en kijken vol enthousiasme uit naar onze toekomst samen.',
+        'story-p1':             'We ontmoetten elkaar voor het eerst in 2021, toen Claire een jaar in het buitenland doorbracht op mijn middelbare school in Eschweiler, Duitsland. We kwamen in dezelfde klas terecht, zaten naast elkaar en werden al snel goede vrienden.',
+        'story-p2':             'Wat begon met grapjes in de klas groeide snel uit tot een hechte vriendschap. In de weekenden gingen we vaak wandelen en vebrachten veel tijd met elkaar onder het genot van een kop koffie (of wel meerdere..).',
+        'story-p3':             'In de jaren daarna zijn we in contact gebleven via brieven, telefoontjes en bezoeken over duizenden kilometers. In juni vorig jaar vroeg Sjaak Claire ten huwelijk op het bergje van de abdij van Mount Angel, met een paar houten klompen (en natuurlijk een ring). We zijn dankbaar voor de weg die we samen hebben afgelegd en kijken uit naar wat voor ons ligt.',
 
         'moments-heading':      'Momenten door de Jaren',
         'gallery-1-caption':    'Onze eerste date in Keulen.',
@@ -549,9 +460,9 @@ const translations = {
         'faq-q1':               'Is er een dresscode?',
         'faq-a1':               'Voor de kerk wordt je verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
         'faq-q2':               'Hoe zit het met parkeren?',
-        'faq-a2':               'Zowel bij de kerk als bij de locatie voor de receptie is er gratis privéparkeergelegenheid beschikbaar voor onze gasten.',
-        'faq-q3':               'Waar kunnen we verblijven?',
-        'faq-a3':               'Er zijn niet veel opties in het Mt Angel/Silverton-gebied, maar Salem heeft enkele redelijke mogelijkheden.',
+        'faq-a2':               'Zowel bij de kerk als bij de locatie voor de receptie is er gratis privéparkeergelegenheid beschikbaar.',
+        'faq-q3':               'Kunnen jullie rekening houden met allergieën of dieetwensen?',
+        'faq-a3':               'Ja. Geef eventuele allergieën of dieetwensen aan bij je RSVP, dan houden we hier zo goed mogelijk rekening mee.',
 
         'registry-heading':     'Jouw aanwezigheid is het mooiste cadeau dat wij ons kunnen wensen.',
         'registry-message':     'Maar als je toch iets wilt geven, hebben wij een kleine cadeaulijst samengesteld.\nKlik op onderstaande link om de cadeaulijst te bezoeken.',
@@ -583,9 +494,9 @@ const translations = {
         'welcome-p2':           'Nachfolgend finden Sie alle Details zur Zeremonie, zum Empfang und mehr. Wir sind dankbar für Ihre Anwesenheit, wenn wir gemeinsam dieses große lebenslange Abenteuer beginnen.',
 
         'story-heading':        'Ein Blick in unsere Geschichte',
-        'story-p1':             'Claire und ich lernten uns 2021 kennen, als sie ein Auslandsjahr an meiner Schule in Eschweiler verbrachte. Wir wurden Klassenkameraden und saßen nebeneinander und wurden schnell enge Freunde.',
-        'story-p2':             'Was mit Scherzen im Unterricht begann, entwickelte sich bald zu einer echten Freundschaft. Wir verbrachten viel Zeit in den Wochenenden mit Wandern, gingen gemeinsam in die Messe und unterhielten uns stundenlang bei einer Tasse Kaffee (oder zwei…).',
-        'story-p3':             'Über die Jahre blieben wir durch Briefe, Telefonate und Besuche über Tausende von Kilometern hinweg in Kontakt. Im Juni letzten Jahres machte ich Claire in der Abtei Mount Angel mit einem Paar Holzschuhen einen Heiratsantrag (und selbstverständlich mit einem Ring). Wir sind dankbar für den Weg, den unsere Beziehung gegangen ist, und freuen uns auf unsere gemeinsame Zukunft.',
+        'story-p1':             'Wir haben uns 2021 kennengelernt, als Claire ein Auslandsjahr an meiner Schule in Eschweiler verbrachte. Wir kamen in dieselbe Klasse, saßen nebeneinander und wurden schnell gute Freunde.',
+        'story-p2':             'Was mit ein paar Scherzen im Unterricht begann, entwickelte sich zu einer echten Freundschaft. An den Wochenenden gingen wir wandern, gemeinsam zur Messe und verbrachten oft Stunden im Gespräch bei einer Tasse Kaffee (oder mehreren..).',
+        'story-p3':             'Über die Jahre hinweg blieben wir durch Briefe, Telefonate und Besuche über Tausende von Kilometern hinweg in Kontakt. Im Juni letzten Jahres machte Sjaak Claire einen Hochzeitsantrag bei der Abtei von Mount Angel - mit einem Paar Holzschuhen (und natürlich einem Ring). Wir sind dankbar für den Weg, den wir gemeinsam gegangen sind, und freuen uns auf alles, was vor uns liegt.',
 
         'moments-heading':      'Momente durch die Jahre',
         'gallery-1-caption':    'Unser erstes Date in Köln.',
@@ -632,9 +543,9 @@ const translations = {
         'faq-q1':               'Gibt es einen Dresscode?',
         'faq-a1':               'Im Allgemeinen wird formelle Kleidung geschätzt. Für den Gottesdienst bitten wir Sie, sich dezent zu kleiden (z. B. Schultern bedeckt).',
         'faq-q2':               'Wie sieht es mit Parkmöglichkeiten aus?',
-        'faq-a2':               'Sowohl am Ort der Trauung als auch am Ort der Feier stehen unseren Gästen kostenlose Privatparkplätze zur Verfügung.',
-        'faq-q3':               'Wo können wir übernachten?',
-        'faq-a3':               'Da es in der Gegend um Mt Angel/Silverton wenige Möglichkeiten gibt, bietet Salem einige solide Optionen.',
+        'faq-a2':               'Sowohl am Ort der Trauung als auch am Ort der Feier stehen kostenlose Privatparkplätze zur Verfügung.',
+        'faq-q3':               'Können Allergien oder besondere Ernährungswünsche berücksichtigt werden?',
+        'faq-a3':               'Ja. Bitte geben Sie Allergien oder besondere Ernährungswünsche bei der RSVP an, dann berücksichtigen wir diese so gut wie möglich.',
 
         'registry-heading':     'Ihre Anwesenheit ist wirklich das schönste Geschenk, das wir uns wünschen können.',
         'registry-message':     'Aber wenn Sie dennoch etwas schenken möchten, haben wir eine kleine Wunschliste zusammengestellt.\nKlicken Sie auf den Link unten, um die Wunschliste zu besuchen.',
