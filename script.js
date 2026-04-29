@@ -375,7 +375,7 @@ const translations = {
 
         'faq-heading':          'Commonly Asked Questions',
         'faq-q1':               'Is there a dress code?',
-        'faq-a1':               'In general, semi-formal or formal attire is appreciated. For the Church, please dress modestly (e.g., covered shoulders).',
+        'faq-a1':               'Semi-formal attire is requested.',
         'faq-q2':               'What is parking like?',
         'faq-a2':               'Both the ceremony and reception locations offer dedicated private parking areas free of charge.',
         'faq-q3':               'Can you accommodate food allergies or dietary requirements?',
@@ -458,7 +458,7 @@ const translations = {
 
         'faq-heading':          'Veelgestelde Vragen',
         'faq-q1':               'Is er een dresscode?',
-        'faq-a1':               'Voor de kerk wordt je verzocht bescheiden en formeel gekleed te gaan (bijvoorbeeld met bedekte schouders).',
+        'faq-a1':               'Formele kleding wordt verzocht.',
         'faq-q2':               'Hoe zit het met parkeren?',
         'faq-a2':               'Zowel bij de kerk als bij de locatie voor de receptie is er gratis privéparkeergelegenheid beschikbaar.',
         'faq-q3':               'Kunnen jullie rekening houden met allergieën of dieetwensen?',
@@ -541,7 +541,7 @@ const translations = {
 
         'faq-heading':          'Häufig gestellte Fragen',
         'faq-q1':               'Gibt es einen Dresscode?',
-        'faq-a1':               'Im Allgemeinen wird formelle Kleidung geschätzt. Für den Gottesdienst bitten wir Sie, sich dezent zu kleiden (z. B. Schultern bedeckt).',
+        'faq-a1':               'Formelle Kleidung geschätzt. Für den Gottesdienst bitten wir Sie, sich dezent zu kleiden.',
         'faq-q2':               'Wie sieht es mit Parkmöglichkeiten aus?',
         'faq-a2':               'Sowohl am Ort der Trauung als auch am Ort der Feier stehen kostenlose Privatparkplätze zur Verfügung.',
         'faq-q3':               'Können Allergien oder besondere Ernährungswünsche berücksichtigt werden?',
