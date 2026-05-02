@@ -459,35 +459,6 @@ section {
     content: '\2722';
 }
 
-/* ==========================================
-   INTERMISSION SECTION
-   ========================================== */
-
-.intermission {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    overflow: hidden;
-    background-color: var(--dark-gray-azure);
-}
-
-
-.intermission-bg {
-    position: absolute;
-    inset: 0;
-    background-color: var(--dark-gray-azure);
-    background-image: url('img/snow-h-1.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    /* Start at normal scale */
-    transform: scale(1); 
-    /* Smooth transition for the zoom effect */
-    transition: transform 2.5s ease-out; 
-}
-
 
 
 /* ==========================================

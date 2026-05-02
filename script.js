@@ -272,48 +272,12 @@ function setupScrollAnimations() {
     // RSVP section
     // ------------------------------------------
     watch('.rsvp-form-wrapper');
-
-    // ------------------------------------------
-    // Intermission quote-divider (fades in once visible)
-    // Managed separately via the scroll handler below
-    // ------------------------------------------
-    const quoteDivider = document.querySelector('.quote-divider');
-    if (quoteDivider) {
-        makeObserver(0.4).observe(quoteDivider);
-    }
 }
 
-// ==========================================
-// INTERMISSION — IO-driven clarify animation
-// ==========================================
 
-function setupIntermission() {
-    const intermission = document.querySelector('.intermission');
-    const bg           = document.querySelector('.intermission-bg');
-    
-    // We only need the section and the background now
-    if (!intermission || !bg) return;
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Zoom in slightly when the user scrolls to this section
-                bg.style.transform = 'scale(1.1)';
-            } else {
-                // Zoom back out to original size when scrolling away
-                bg.style.transform = 'scale(1)';
-            }
-        });
-    }, { 
-        // Trigger the effect when 10% of the section is visible
-        threshold: 0.1 
-    });
-
-    observer.observe(intermission);
-}
 
 // ==========================================
-// LANGUAGE / i18n SYSTEM
+// LANGUAGE
 // ==========================================
 
 const translations = {
@@ -821,7 +785,6 @@ function setupArchOverlays() {
 
 document.addEventListener('DOMContentLoaded', () => {
     setupScrollAnimations();
-    setupIntermission();
     setupGalleryScrollbar();
     setupGalleryClick();
     setupLanguageSwitcher();
