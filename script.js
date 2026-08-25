@@ -274,7 +274,118 @@ function setupScrollAnimations() {
     watch('.rsvp-form-wrapper');
 }
 
+// ==========================================
+// WEDDING PHOTOS + LIGHTBOX
+// ==========================================
 
+const weddingPhotos = [
+    { src: 'img/wed-pic-1.jpg',  caption: 'Photo 1' },
+    { src: 'img/wed-pic-2.jpg',  caption: 'Photo 2' },
+    { src: 'img/wed-pic-3.jpg',  caption: 'Photo 3' },
+    { src: 'img/wed-pic-4.jpg',  caption: 'Photo 4' },
+    { src: 'img/wed-pic-5.jpg',  caption: 'Photo 5' },
+    { src: 'img/wed-pic-6.jpg',  caption: 'Photo 6' },
+    { src: 'img/wed-pic-7.jpg',  caption: 'Photo 7' },
+    { src: 'img/wed-pic-8.jpg',  caption: 'Photo 8' },
+    { src: 'img/wed-pic-9.jpg',  caption: 'Photo 9' },
+    { src: 'img/wed-pic-10.jpg', caption: 'Photo 10' },
+    { src: 'img/wed-pic-11.jpg', caption: 'Photo 11' },
+    { src: 'img/wed-pic-12.jpg', caption: 'Photo 12' },
+    { src: 'img/wed-pic-13.jpg', caption: 'Photo 13' },
+    { src: 'img/wed-pic-14.jpg', caption: 'Photo 14' },
+    { src: 'img/wed-pic-15.jpg', caption: 'Photo 15' },
+    { src: 'img/wed-pic-16.jpg', caption: 'Photo 16' },
+    { src: 'img/wed-pic-17.jpg', caption: 'Photo 17' },
+    { src: 'img/wed-pic-18.jpg', caption: 'Photo 18' },
+    { src: 'img/wed-pic-19.jpg', caption: 'Photo 19' },
+    { src: 'img/wed-pic-20.jpg', caption: 'Photo 20' },
+];
+
+let currentPhotoIndex = 0;
+let photoGridBuilt = false;
+
+function setupWeddingPhotos() {
+    const grid = document.getElementById('photoGrid');
+    if (!grid || photoGridBuilt) return;
+
+    weddingPhotos.forEach((photo, index) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'photo-thumb';
+        thumb.innerHTML = `<img src="${photo.src}" alt="${photo.caption || 'Wedding photo ' + (index + 1)}" loading="lazy">`;
+        thumb.addEventListener('click', () => openLightbox(index));
+        grid.appendChild(thumb);
+    });
+
+    photoGridBuilt = true;
+}
+
+function openLightbox(index) {
+    currentPhotoIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.classList.add('overlay-open');
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    // Only clear the "no scroll" class if the arch overlay isn't also open
+    const archOpen = document.querySelector('.arch-overlay.active');
+    if (!archOpen) document.body.classList.remove('overlay-open');
+}
+
+function updateLightbox() {
+    const photo = weddingPhotos[currentPhotoIndex];
+    const img = document.getElementById('lightboxImage');
+    img.src = photo.src;
+    img.alt = photo.caption || `Wedding photo ${currentPhotoIndex + 1}`;
+    document.getElementById('lightboxCaption').textContent = photo.caption || '';
+    document.getElementById('lightboxCounter').textContent =
+        `${currentPhotoIndex + 1} / ${weddingPhotos.length}`;
+}
+
+function showNextPhoto() {
+    currentPhotoIndex = (currentPhotoIndex + 1) % weddingPhotos.length;
+    updateLightbox();
+}
+
+function showPrevPhoto() {
+    currentPhotoIndex = (currentPhotoIndex - 1 + weddingPhotos.length) % weddingPhotos.length;
+    updateLightbox();
+}
+
+function setupLightboxControls() {
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxNext').addEventListener('click', showNextPhoto);
+    document.getElementById('lightboxPrev').addEventListener('click', showPrevPhoto);
+
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+        if (e.target.id === 'lightbox') closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('lightbox');
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNextPhoto();
+        if (e.key === 'ArrowLeft') showPrevPhoto();
+    });
+
+    // Swipe navigation (mobile)
+    let touchStartX = 0;
+    const lightbox = document.getElementById('lightbox');
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 50) {
+            if (diff < 0) showNextPhoto();
+            else showPrevPhoto();
+        }
+    }, { passive: true });
+}
 
 // ==========================================
 // LANGUAGE
@@ -789,6 +900,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupGalleryClick();
     setupLanguageSwitcher();
     setupArchOverlays();
+    setupWeddingPhotos();
+    setupLightboxControls();
 });
 
 console.log('Wedding website initialized successfully!');
