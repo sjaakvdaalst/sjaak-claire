@@ -302,10 +302,10 @@ function setupWeddingPhotos() {
     const grid = document.getElementById('photoGrid');
     if (!grid || photoGridBuilt) return;
 
-    weddingPhotos.forEach((photo, index) => {
+    weddingPhotos.forEach((src, index) => {
         const thumb = document.createElement('div');
         thumb.className = 'photo-thumb';
-        thumb.innerHTML = `<img src="${photo.src}" alt="${photo.caption || 'Wedding photo ' + (index + 1)}" loading="lazy">`;
+        thumb.innerHTML = `<img src="${src}" alt="Wedding photo ${index + 1}" loading="lazy">`;
         thumb.addEventListener('click', () => openLightbox(index));
         grid.appendChild(thumb);
     });
@@ -328,11 +328,10 @@ function closeLightbox() {
 }
 
 function updateLightbox() {
-    const photo = weddingPhotos[currentPhotoIndex];
+    const src = weddingPhotos[currentPhotoIndex];
     const img = document.getElementById('lightboxImage');
-    img.src = photo.src;
-    img.alt = photo.caption || `Wedding photo ${currentPhotoIndex + 1}`;
-    document.getElementById('lightboxCaption').textContent = photo.caption || '';
+    img.src = src;
+    img.alt = `Wedding photo ${currentPhotoIndex + 1}`;
     document.getElementById('lightboxCounter').textContent =
         `${currentPhotoIndex + 1} / ${weddingPhotos.length}`;
 }
