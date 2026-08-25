@@ -701,6 +701,7 @@ section {
 }
 
 .lightbox-caption {
+    display: none;
     font-family: var(--font-cormorant);
     font-size: 20px;
     font-style: italic;
