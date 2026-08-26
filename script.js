@@ -274,6 +274,31 @@ function setupScrollAnimations() {
     watch('.rsvp-form-wrapper');
 }
 
+
+// ==========================================
+// HERO CTA — fade in, open wedding pictures overlay
+// ==========================================
+
+function setupHeroCta() {
+    const cta = document.getElementById('heroCta');
+    if (!cta) return;
+
+    // Fade in 2 seconds after load
+    setTimeout(() => {
+        cta.classList.add('visible');
+    }, 2000);
+
+    cta.addEventListener('click', () => {
+        const overlay = document.getElementById('arch-overlay-3');
+        if (!overlay) return;
+        overlay.classList.add('active');
+        document.body.classList.add('overlay-open');
+        const closeBtn = overlay.querySelector('.arch-overlay-close');
+        if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+    });
+}
+
+
 // ==========================================
 // WEDDING PHOTOS + LIGHTBOX
 // ==========================================
@@ -391,9 +416,11 @@ const translations = {
         'nav-registry':         'Registry',
         'nav-rsvp':             'RSVP',
 
+        'hero-cta': 'We said yes! Jump to the wedding pictures',
+
         'welcome-heading':      'Welcome!',
-        'welcome-p1':           'Claire and Sjaak joyfully invite you to share in the celebration of their union in the Sacrament of Holy Matrimony.',
-        'welcome-p2':           'Below, you will find all details about the ceremony, reception, and more. We\'re grateful for your presence as we embark on this great lifelong adventure together.',
+        'welcome-p1':           'On July 25, we got married in a beautiful ceremony at St. Mary Catholic Church in Mt Angel. It was a day filled with joy, love, reverence, and memories that we will cherish forever.',
+        'welcome-p2':           'We would like to thank everyone who joined us, as well as for all the prayers and kind gifts we have received.',
 
         'story-heading':        'A Peek Into Our Story',
         'story-p1':             'We first met in 2021 when Claire studied abroad at Sjaak\'s high school in Eschweiler, Germany. We ended up as classmates and seatmates, and we quickly became close friends.',
@@ -474,9 +501,11 @@ const translations = {
         'nav-registry':         'Cadeaulijst',
         'nav-rsvp':             'RSVP',
 
+        'hero-cta': 'We hebben ja gezegd! Naar de trouwfoto\'s',
+
         'welcome-heading':      'Welkom!',
-        'welcome-p1':           'Claire en Sjaak nodigen je met vreugde uit om deel te nemen aan de viering van hun bruiloft.',
-        'welcome-p2':           'Hieronder vind je alle details over de ceremonie, de receptie en meer. Wij zijn dankbaar voor jouw aanwezigheid op deze bijzonder dag als wij samen aan dit grote, levenslange avontuur beginnen.',
+        'welcome-p1':           'Op 25 juli zijn wij in een prachtige ceremonie getrouwd in de St. Mary Catholic Church in Mt. Angel. Het was een dag vol vreugde, liefde, eerbied en herinneringen die we voor altijd zullen koesteren.',
+        'welcome-p2':           'We willen iedereen bedanken die deze bijzondere dag met ons heeft gedeeld, evenals voor alle kaarten en leuke cadeaus die we hebben ontvangen.',
 
         'story-heading':        'Een Kijkje in Ons Verhaal',
         'story-p1':             'We ontmoetten elkaar voor het eerst in 2021, toen Claire een jaar in het buitenland doorbracht op mijn middelbare school in Eschweiler, Duitsland. We kwamen in dezelfde klas terecht, zaten naast elkaar en werden al snel goede vrienden.',
@@ -557,9 +586,12 @@ const translations = {
         'nav-registry':         'Wunschliste',
         'nav-rsvp':             'RSVP',
 
+        
+        'hero-cta': 'Wir haben Ja gesagt! Zu den Hochzeitsfotos',
+
         'welcome-heading':      'Willkommen!',
-        'welcome-p1':           'Claire und Sjaak laden Sie herzlich ein, an der Feier ihrer Verbindung im Sakrament der Heiligen Ehe teilzunehmen.',
-        'welcome-p2':           'Nachfolgend finden Sie alle Details zur Zeremonie, zum Empfang und mehr. Wir sind dankbar für Ihre Anwesenheit, wenn wir gemeinsam dieses große lebenslange Abenteuer beginnen.',
+        'welcome-p1':           'Am 25. Juli haben wir in einer wunderschönen Zeremonie in der St. Marien Kirche in Mt. Angel geheiratet. Es war ein Tag voller Freude, Liebe, Ehrfurcht und Erinnerungen, die wir für immer in unseren Herzen tragen werden.',
+        'welcome-p2':           'Wir möchten uns bei allen bedanken, die diesen besonderen Tag mit uns gefeiert haben, sowie für all die Gebete und liebevollen Geschenke, die wir erhalten haben.',
 
         'story-heading':        'Ein Blick in unsere Geschichte',
         'story-p1':             'Wir haben uns 2021 kennengelernt, als Claire ein Auslandsjahr an meiner Schule in Eschweiler verbrachte. Wir kamen in dieselbe Klasse, saßen nebeneinander und wurden schnell gute Freunde.',
@@ -895,6 +927,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupArchOverlays();
     setupWeddingPhotos();
     setupLightboxControls();
+    setupHeroCta();
 });
 
 console.log('Wedding website initialized successfully!');

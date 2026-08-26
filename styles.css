@@ -324,6 +324,65 @@ section {
     transform: translateX(0px);
 }
 
+
+/* ==========================================
+   HERO CTA — jump to wedding pictures
+   ========================================== */
+
+.hero-cta {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    z-index: 2;
+
+    background: var(--dark-red);
+    color: var(--cream-white);
+    border: 2px solid var(--pastel-gray-yellow);
+    border-radius: 999px;
+    padding: 1rem 2rem;
+    font-family: var(--font-cormorant);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.9s ease, transform 0.9s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-cta.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.hero-cta:hover {
+    background: #8a1320;
+    box-shadow: 0 8px 26px rgba(109, 15, 26, 0.5);
+}
+
+@media (max-width: 768px) {
+    .hero-cta {
+        bottom: 8%;
+        font-size: 17px;
+        padding: 0.85rem 1.5rem;
+        max-width: 90vw;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-cta {
+        font-size: 15px;
+    }
+}
+
 /* ==========================================
    WELCOME SECTION
    ========================================== */
