@@ -318,10 +318,33 @@ const weddingPhotos = [
     'img/wed-pic-16.jpg',
     'img/wed-pic-17.jpg',
     'img/wed-pic-18.jpg',
+    'img/wed-pic-19.jpg',
 ];
 
 let currentPhotoIndex = 0;
 let photoGridBuilt = false;
+
+// ==========================================
+// NAV — "Photos" link opens Wedding Pictures overlay
+// ==========================================
+
+function setupNavPhotosLink() {
+    const link = document.getElementById('navPhotosLink');
+    if (!link) return;
+
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const overlay = document.getElementById('arch-overlay-3');
+        if (!overlay) return;
+        overlay.classList.add('active');
+        document.body.classList.add('overlay-open');
+        // Close the nav menu since we're opening another overlay
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        const closeBtn = overlay.querySelector('.arch-overlay-close');
+        if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+    });
+}
 
 function setupWeddingPhotos() {
     const grid = document.getElementById('photoGrid');
@@ -413,7 +436,7 @@ const translations = {
     en: {
         'nav-story':            'Our Story',
         'nav-mass':             'Nuptial Mass',
-        'nav-registry':         'Registry',
+        'nav-registry':         'Photos',
         'nav-rsvp':             'RSVP',
 
         'hero-cta': 'We said yes! Jump to the wedding pictures',
@@ -476,9 +499,8 @@ const translations = {
         'faq-q3':               'Can you accommodate food allergies or dietary requirements?',
         'faq-a3':               'Yes. Please let us know any allergies or dietary requirements in your RSVP, and we will do our best to accommodate them.',
 
-        'registry-heading':     'Your presence is truly the best gift we could ask for.',
-        'registry-message':     'But if you feel called to give a little something, we\'ve put together a small registry.\nClick the link below to reach the gift registry.',
-        'registry-link':        'Visit our gift registry',
+        'registry-heading':     'Thank You for Your Immense Generosity',
+        'registry-message':     'We would like to thank you for thinking of us and for your special and thoughtful gifts. It means a lot to us!',
 
         'rsvp-heading':         'Please RSVP by June 1st, 2026',
         'rsvp-label-name':      'Full Name',
@@ -498,7 +520,7 @@ const translations = {
     nl: {
         'nav-story':            'Ons Verhaal',
         'nav-mass':             'Huwelijksmis',
-        'nav-registry':         'Cadeaulijst',
+        'nav-registry':         'Foto\'s',
         'nav-rsvp':             'RSVP',
 
         'hero-cta': 'We hebben ja gezegd! Naar de trouwfoto\'s',
@@ -561,9 +583,8 @@ const translations = {
         'faq-q3':               'Kunnen jullie rekening houden met allergieën of dieetwensen?',
         'faq-a3':               'Ja. Geef eventuele allergieën of dieetwensen aan bij je RSVP, dan houden we hier zo goed mogelijk rekening mee.',
 
-        'registry-heading':     'Jouw aanwezigheid is het mooiste cadeau dat wij ons kunnen wensen.',
-        'registry-message':     'Maar als je toch iets wilt geven, hebben wij een kleine cadeaulijst samengesteld.\nKlik op onderstaande link om de cadeaulijst te bezoeken.',
-        'registry-link':        'Bezoek onze cadeaulijst',
+        'registry-heading':     'Dankjewel voor Jullie Enorme Vrijgevigheid',
+        'registry-message':     'We willen je graag bedanken dat je aan ons hebt gedacht en voor je bijzondere en handige cadeaus. Het betekent veel voor ons!',
 
         'rsvp-heading':         'Meld je aan vóór 1 juni 2026',
         'rsvp-label-name':      'Volledige naam',
@@ -583,7 +604,7 @@ const translations = {
     de: {
         'nav-story':            'Unsere Geschichte',
         'nav-mass':             'Trauungsmesse',
-        'nav-registry':         'Wunschliste',
+        'nav-registry':         'Fotos',
         'nav-rsvp':             'RSVP',
 
         
@@ -647,9 +668,8 @@ const translations = {
         'faq-q3':               'Können Allergien oder besondere Ernährungswünsche berücksichtigt werden?',
         'faq-a3':               'Ja. Bitte geben Sie Allergien oder besondere Ernährungswünsche bei der RSVP an, dann berücksichtigen wir diese so gut wie möglich.',
 
-        'registry-heading':     'Ihre Anwesenheit ist wirklich das schönste Geschenk, das wir uns wünschen können.',
-        'registry-message':     'Aber wenn Sie dennoch etwas schenken möchten, haben wir eine kleine Wunschliste zusammengestellt.\nKlicken Sie auf den Link unten, um die Wunschliste zu besuchen.',
-        'registry-link':        'Unsere Wunschliste besuchen',
+        'registry-heading':     'Vielen Dank für Ihre Große Großzügigkeit',
+        'registry-message':     'Wir möchten uns dafür bedanken, dass Sie an uns gedacht haben, und für Ihre besonderen und aufmerksamen Geschenke. Es bedeutet uns sehr viel!',
 
         'rsvp-heading':         'Bitte melden Sie sich bis zum 1. Juni 2026 an',
         'rsvp-label-name':      'Vollständiger Name',
@@ -928,6 +948,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupWeddingPhotos();
     setupLightboxControls();
     setupHeroCta();
+    setupNavPhotosLink();
 });
 
 console.log('Wedding website initialized successfully!');
